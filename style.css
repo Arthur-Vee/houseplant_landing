@@ -1,0 +1,281 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+p{
+    font-style: italic;
+}
+
+.inter-regular {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+}
+.inter-italic {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+.inter-bold {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+button{
+    font-family: "Inter", sans-serif;
+    padding: 14px 24px;
+    background-color: #000000;
+    font-size: 16px;
+    color: #DADADA;
+    font-style: italic;
+    border-style: none;
+}
+
+.content-container{
+    margin: 0 auto;
+    height: 100%;
+   
+}
+.header{
+    box-sizing: border-box;
+    background-color: #DADADA;
+    height: 100vh;
+    width: 100vw;
+    padding-top: 52px;
+    padding-bottom: 52px;
+}
+.header_content-wrapper{
+    display: flex;
+    height: inherit;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 50%;
+}
+.logo p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    position: relative;
+    bottom: 0px;
+}
+.navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+.navigation_buttons button:after {
+    display: block;
+    content: "";
+    position: relative;
+    top: -6px;
+    left: -35px;
+    width: 18px;
+    height: 2px;
+    background-color: #010101;
+}
+.navigation_buttons button:first-child:after {
+    left: -15px; /* Hide border after the last button */
+}
+.title{
+    margin-top: 128px;
+    margin-bottom: 24px;
+    font-family: "Archivo Black", sans-serif;
+    font-size: 128px;
+    font-weight: 700;
+}
+.project{
+    display: flex;
+    align-items: center;
+}
+.project img{
+    width: 75%;
+}
+.project2{
+    flex-direction: row-reverse;
+}
+.projectText{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.decorLine {
+    display: flex;
+    align-items: center;
+    content: "";
+    width: 100px;
+    height: 1px;
+    background-color: #010101;
+}
+.listing{
+    display: inline-block;
+    justify-content: center;
+    padding-left: 24px;
+    padding-top: 26px;
+    border-right: 1px solid black;
+    border-top: 1px solid black;
+    flex: 1 1 0px;
+}
+.listing p{
+    font-family: "Inter", sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    margin-top: 36px;
+    margin-bottom: 26px;
+}
+.we_do_offer_listing{
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.we_do_offer_upper_row{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.we_do_offer_lower_row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.teamPictures{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.teamPictures2{
+    flex-direction: row-reverse;
+}
+.email_sending_form{
+    display: flex;
+    border: solid 1px black;
+}
+.formEmelemnt{
+    color: black;
+    flex: 1;
+    text-align: center;
+    background-color: transparent;
+ 
+}
+.contact_form input{
+    background-color: transparent;
+    border: none;
+    border-right: solid 1px black;
+    height: 244px;
+}
+.paragraphTexts{
+    font-style: italic;
+    max-width: 600px;
+    margin-top: 24px;
+    margin-bottom: 72px;
+}
+
+@media (min-width: 1191px) {
+    .content-container{
+        width: 1144px;
+    }
+}
+@media (max-width: 1190px) {
+    .content-container{
+        width: 952px;
+    }
+    .header_content-wrapper{
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .navigation{
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+@media (max-width: 1000px) {
+    .content-container{
+        width: 760px;
+    }
+}
+@media (max-width: 808px) {
+    .content-container{
+        width: 568px;
+    }
+    .header_content-wrapper {
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .navigation{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    .navigation_buttons{
+        margin-top: 24px;
+        line-height: 3.2;
+    }
+    .navigation_buttons button::after{
+        display: none;
+    }
+    .header{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .projectText{
+        display: none;
+    }
+    .decorLine{
+        display: none;
+    }
+    .listing{
+        flex: 1 1 258px;
+    }
+    .teamPictures{
+        display: block;
+        flex-direction: column;
+        text-align: left;
+    }
+    .personDetails{
+        width: 100%;
+        margin-bottom: 24px;
+    }
+    .personDetails img{
+        width: 2%;
+    }
+    .email_sending_form{
+        flex-direction: column;
+        height: 488px;
+        border: solid 1px black;
+    }
+    .email_sending_form input{
+        border-right: solid 0px black;
+        border-bottom: solid 1px black;
+    }
+    .email_sending_form button{
+        padding: 0px;
+    }
+}
+@media (max-width: 616px) {
+    .content-container{
+        width: 424px;
+    }
+    .title{
+        font-size: 62px;
+    }
+    .listing{
+        flex: 1 1 180px;
+    }
+}
+@media (max-width: 472px) {
+    .content-container{
+        width: 312px;
+    }
+    .title{
+        font-size: 62px;
+    }
+    .listing{
+        flex: 1 1 130px;
+    }
+}
