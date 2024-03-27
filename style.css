@@ -2,6 +2,11 @@
     padding: 0;
     margin: 0;
 }
+html{
+    scroll-behavior: smooth;
+}
+body{
+}
 p{
     font-style: italic;
 }
@@ -38,7 +43,7 @@ button{
 .header{
     box-sizing: border-box;
     background-color: #DADADA;
-    height: 100vh;
+    height: 456px;
     width: 100vw;
     padding-top: 52px;
     padding-bottom: 52px;
@@ -69,7 +74,28 @@ button{
     justify-content: space-between;
     width: 100%;
 }
-.navigation_buttons button:after {
+.navigation_buttons{
+    display: flex;
+    gap:4px;
+}
+.navigation_buttons a{
+    font-family: "Inter", sans-serif;
+    padding: 14px 24px;
+    background-color: #000000;
+    font-size: 16px;
+    color: #DADADA;
+    font-style: italic;
+    border-style: none;
+    text-decoration: none;
+    transition: scroll-top 10s ease-in-out;
+}
+a{
+    text-decoration: none;
+    outline: none;
+    transition: none;
+    scroll-behavior: auto;
+}
+.navigation_buttons a:after {
     display: block;
     content: "";
     position: relative;
@@ -79,7 +105,7 @@ button{
     height: 2px;
     background-color: #010101;
 }
-.navigation_buttons button:first-child:after {
+.navigation_buttons a:first-child:after {
     left: -15px; /* Hide border after the last button */
 }
 .title{
@@ -103,14 +129,6 @@ button{
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-.decorLine {
-    display: flex;
-    align-items: center;
-    content: "";
-    width: 100px;
-    height: 1px;
-    background-color: #010101;
 }
 .listing{
     display: inline-block;
@@ -146,9 +164,19 @@ button{
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-size: 16px;
+    gap: 4px;
 }
 .teamPictures2{
     flex-direction: row-reverse;
+}
+.decorLine {
+    display: flex;
+    align-items: center;
+    content: "";
+    width: 448px;
+    height: 1px;
+    background-color: #010101;
 }
 .email_sending_form{
     display: flex;
@@ -199,7 +227,7 @@ button{
         width: 760px;
     }
 }
-@media (max-width: 808px) {
+@media (max-width: 744px) {
     .content-container{
         width: 568px;
     }
@@ -214,18 +242,29 @@ button{
     }
     .navigation_buttons{
         margin-top: 24px;
-        line-height: 3.2;
     }
-    .navigation_buttons button::after{
+    .navigation_buttons a::after{
         display: none;
     }
     .header{
         padding-top: 40px;
         padding-bottom: 40px;
     }
-    .projectText{
-        display: none;
+    .project{
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
+    .project img{
+        width: 100%;
+    }
+    .projectText{
+        width: 100%;
+        justify-content: flex-start;
+        margin-bottom: 24px;
+    }
+    
     .decorLine{
         display: none;
     }
@@ -262,10 +301,14 @@ button{
         width: 424px;
     }
     .title{
+        margin-top: 96px;
         font-size: 62px;
     }
     .listing{
         flex: 1 1 180px;
+    }
+    .navigation_buttons{
+        flex-wrap: wrap;
     }
 }
 @media (max-width: 472px) {
