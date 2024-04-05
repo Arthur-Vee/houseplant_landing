@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,16 +13,57 @@
     <script defer src="app.js"></script>
     <title>Document</title>
 </head>
+
 <body>
     <div class="project-wrapper">
         <section id="header" class="header">
+            <div id="modalMenu" class="modalMenu">
+                <div class="modalMenuContent">
+                    <div class="content-container">
+                        <div class="modalContentWrapper">
+                            <div class="logoWithNameMobileModal">
+                                <img src="/img/logo.svg" alt="">
+                                <div class="companyName inter-bold">House<br>Plant.</div>
+                            </div>
+                            <div onclick="closeModal()"
+                                class="navigation_buttons modal_navigation_buttons inter-regular">
+                                <a href="#work"><span>Work</span><img src="./img/arrowLeft_ModalNav.svg" alt=""></a>
+                                <a href="#whatWeDo"><span>What we do</span><img src="./img/arrowLeft_ModalNav.svg"
+                                        alt=""></a>
+                                <a href="#about"><span>About</span><img src="./img/arrowLeft_ModalNav.svg" alt=""></a>
+                                <a href="#contact"><span>Contact</span><img src="./img/arrowLeft_ModalNav.svg"
+                                        alt=""></a>
+                            </div>
+                            <span onclick="closeModal()" id="close" class="close"><img src="./img/modalCloseArrow.svg"
+                                    alt="">
+                                <p class="inter-italic hideButton">Hide</p>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div id="mobileNavWithHamburgerMenu" class="mobileNavWithHamburgerMenu">
+                <div id="mobileNavWithHamburgerMenuWrapper" class="mobileNavWithHamburgerMenuWrapper">
+                    <div class="logoWithNameMobile burgerElement">
+                        <img src="/img/logo.svg" alt="">
+                        <div class="companyName inter-bold">House<br>Plant.</div>
+                    </div>
+                    <div class="burgerMenuDivider"></div>
+                    <div id="burger_menu" class="burger_menu burgerElement">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
             <div class="content-container">
                 <div class="header_content-wrapper">
                     <div class="logo">
                         <div class="logoWithName">
                             <img src="/img/logo.svg" alt="">
                             <div class="companyName inter-bold">House<br>Plant.</div>
-
                         </div>
                     </div>
                     <div class="navigation">
@@ -44,32 +86,32 @@
                 <div class="projects_showcase">
                     <div class="project project1">
                         <a class="projectImage" href="http://"></a>
-                            <img src="/img/project1.svg" alt="">
-                        <div class="decorLine"></div>
-                        <div class="projectText">
-                            <div class="projectTitle">Project Title</div>
-                            <div class="projectDescription">Project Description</div>
+                        <img src="/img/project1.svg" alt="">
+                        <div class="decorLineForProject"></div>
+                        <div class="projectText inter-italic">
+                            <div class="projectTitle">Project title</div>
+                            <div class="projectDescription">Project description</div>
                         </div>
                     </div>
                     <div class="project project2">
                         <a class="projectImage2" href="http://"></a>
-                            <img src="/img/project2.svg" alt="">
-                        <div class="decorLine"></div>
-                        <div class="projectText">
-                            <div class="projectTitle">Project Title</div>
-                            <div class="projectDescription">Project Description</div>
+                        <img src="/img/project2.svg" alt="">
+                        <div class="decorLineForProject"></div>
+                        <div class="projectText inter-italic">
+                            <div class="projectTitle">Project title</div>
+                            <div class="projectDescription">Project description</div>
                         </div>
                     </div>
                     <div class="project project3">
                         <a class="projectImage3" href="http://"></a>
-                            <img src="/img/project3.svg" alt="">
-                        <div class="decorLine"></div>
-                        <div class="projectText">
-                            <div class="projectTitle">Project Title</div>
-                            <div class="projectDescription">Project Description</div>
+                        <img src="/img/project3.svg" alt="">
+                        <div class="decorLineForProject"></div>
+                        <div class="projectText inter-italic">
+                            <div class="projectTitle">Project title</div>
+                            <div class="projectDescription">Project description</div>
                         </div>
                     </div>
-                    
+
                 </div>
             </div>
         </section>
@@ -111,49 +153,55 @@
         <section id="about" class="about">
             <div class="content-container">
                 <div class="title">ABOUT</div>
-                    <div class="inter-italic about_content">
-                        <p class="inter-italic paragraphTexts">Houseplant is a small web design studio from Riga. A group of freelancers working on hobby projects and websites for small businesses. Houseplant is a small web design studio from Riga.</p>
-                        <div class="teamPictures inter-italic">
-                            <!--need to fix this class cause it will be global for projects and persons-->
-                            <img src="./img/teamPic1.svg" alt="">
-                            <div class="decorLine"></div>
-                            <div class="personDetails">
-                                <div class="name">Arturs Vaskinels</div>
-                                <div class="role">Web developer</div>
-                            </div>
-                        </div>
-                        <div class="teamPictures teamPictures2">
-                            <!--need to fix this class cause it will be global for projects and persons-->
-                            <img src="./img/teamPic2.svg" alt="">
-                            <div class="decorLine"></div>
-                            <div class="personDetails">
-                                <div class="name">Maris Vitols</div>
-                                <div class="role">Illustrator</div>
-                            </div>
-                        </div>
-                        <div class="teamPictures">
-                            <!--need to fix this class cause it will be global for projects and persons-->
-                            <img src="./img/teamPic3.svg" alt="">
-                            <div class="decorLine"></div>
-                            <div class="personDetails">
-                                <div class="name">Raivis Jumtis</div>
-                                <div class="role">Consultant</div>
-                            </div>
+                <div class="inter-italic about_content">
+                    <p class="inter-italic paragraphTexts">Houseplant is a small web design studio from Riga. A group of
+                        freelancers working on hobby projects and websites for small businesses. Houseplant is a small
+                        web design studio from Riga.</p>
+                    <div class="teamPictures inter-italic">
+                        <!--need to fix this class cause it will be global for projects and persons-->
+                        <img id="teamPic1">
+                        <div class="decorLineForTeamPic"></div>
+                        <div class="personDetails">
+                            <div class="name">Arturs Vaskinels</div>
+                            <div class="role">Web developer</div>
                         </div>
                     </div>
+                    <div class="teamPictures teamPictures2">
+                        <!--need to fix this class cause it will be global for projects and persons-->
+                        <img id="teamPic2" src="./img/teamPic2.svg" alt="">
+                        <div class="decorLineForTeamPic"></div>
+                        <div class="personDetails">
+                            <div class="name">Maris Vitols</div>
+                            <div class="role">Illustrator</div>
+                        </div>
+                    </div>
+                    <div class="teamPictures">
+                        <!--need to fix this class cause it will be global for projects and persons-->
+                        <img id="teamPic3" src="./img/teamPic3.svg" alt="">
+                        <div class="decorLineForTeamPic"></div>
+                        <div class="personDetails">
+                            <div class="name">Raivis Jumtis</div>
+                            <div class="role">Consultant</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="contact" class="contact_form">
             <div class="content-container">
                 <div class="title">LETS CHAT!</div>
-                <p class="paragraphTexts">Send all your questions via email, to learn more about what we do and ask more specific questions about your project and pricing. You can use the form below or send an email to houseplant@gmail.com</p>
-                <form class="email_sending_form" action="" method="post">
+                <p class="paragraphTexts">Send all your questions via email, to learn more about what we do and ask more
+                    specific questions about your project and pricing. You can use the form below or send an email to
+                    houseplant@gmail.com</p>
+                <form class="email_sending_form" action="https://formspree.io/f/mnqeoaol" method="POST">
                     <input class="formEmelemnt" placeholder="Your email..." type="email" name="email" id="email">
-                    <input class="formEmelemnt" placeholder="Your message..." type="textarea" name="userText" id="userText">
+                    <input class="formEmelemnt" placeholder="Your message..." type="textarea" name="userText"
+                        id="userText">
                     <button class="contact_form-button formEmelemnt" type="submit">Send</button>
                 </form>
             </div>
         </section>
     </div>
 </body>
+
 </html>
