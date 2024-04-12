@@ -7,7 +7,9 @@ html {
     scroll-behavior: smooth;
 }
 
-body {}
+body {
+    font-family: "Inter", sans-serif;
+}
 
 a {
     text-decoration: none;
@@ -38,14 +40,30 @@ p {
 }
 
 button {
-    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 52px;
     padding: 14px 24px;
+    font-family: "Inter", sans-serif;
     background-color: #000000;
     font-size: 16px;
     color: #DADADA;
     font-style: italic;
     border-style: none;
+    cursor: pointer;
 }
+
+button:hover {
+    color: #DADADA;
+    background-color: rgba(0, 0, 0, 0.16)
+}
+:focus{
+    border: 2px solid blue;
+    outline-style: dotted;  /* Set outline style to dotted */
+     outline-color: red; 
+}
+
 
 .content-container {
     margin: 0 auto;
@@ -70,21 +88,6 @@ button {
 
 }
 
-.logo {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
-}
-
-.logo p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-style: italic;
-    font-size: 16px;
-    position: relative;
-    bottom: 0px;
-}
-
 .navigation {
     display: flex;
     flex-direction: row;
@@ -97,36 +100,62 @@ button {
     gap: 4px;
 }
 
-.navigation_buttons a {
-    font-family: "Inter", sans-serif;
-    padding: 14px 24px;
-    background-color: #000000;
-    font-size: 16px;
-    color: #DADADA;
-    font-style: italic;
-    border-style: none;
-    text-decoration: none;
-    transition: scroll-top 10s ease-in-out;
-}
-
-.navigation_buttons a:after {
-    display: block;
-    content: "";
+.navigation_button::after {
     position: relative;
-    top: -6px;
-    left: -35px;
-    width: 18px;
+    left: 28px;
+    content: "";
+    width: 4px;
     height: 2px;
-    background-color: #010101;
+    background-color: #000000;
 }
 
-.navigation_buttons a:first-child:after {
-    left: -15px;
-    /* Hide border after the last button */
+.navigation_button::after:nth-child(1) {
+    display: none;
 }
 
 .mobileNavWithHamburgerMenu {
     display: none;
+}
+
+/* Navigation that is for screens wider that tablet */
+.stickyNavPopUp {
+    display: none;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    animation: navigationSliderTopToBottom 0.5s ease-in;
+}
+
+.stickyNavPopUpWrapper {
+    height: 64px;
+    border-radius: 8px;
+    background-color: #FFE27C;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.stickyNavPopUpWrapper button {
+    display: flex;
+    align-items: center;
+    height: 52px;
+    background-color: transparent;
+    color: #000000;
+    font-style: italic;
+    border-style: none;
+    cursor: pointer;
+}
+
+.stickyNavPopUpLogoWithName {
+    margin: 0px 72px 0px 16px;
+}
+
+.burgerMenuDivider {
+    display: block;
+    height: 52px;
+    content: "";
+    width: 1px;
+    background-color: black;
 }
 
 .title {
@@ -213,7 +242,8 @@ button {
 .teamPictures2 {
     flex-direction: row-reverse;
 }
-#teamPic1{
+
+#teamPic1 {
     background-image: url(./img/teamPic1.svg);
 }
 
@@ -255,7 +285,6 @@ button {
     margin-bottom: 72px;
 }
 
-
 /* Modal Window Styles */
 .modalMenu {
     display: none;
@@ -268,7 +297,8 @@ button {
     background-color: #FFE27C;
     overflow: auto;
 }
-.modalContentWrapper{
+
+.modalContentWrapper {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -296,6 +326,7 @@ button {
 }
 
 .close {
+    color: black;
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -307,32 +338,63 @@ button {
     float: right;
     font-size: 28px;
     font-weight: bold;
+    background-color: transparent;
 }
 
 .close:hover,
 .close:focus {
     color: black;
+    background-color: transparent;
     text-decoration: none;
     cursor: pointer;
 }
 
+.contact_form {
+    margin-bottom: 72px;
+}
+
+.email_sending_form button {
+    height: 244px;
+    justify-content: center;
+}
+
+.email_sending_form button:hover {
+    color: white;
+}
+
 @keyframes navigationSlider {
     0% {
-        bottom: 100%
+        bottom: -70px;
+        display: none;
     }
 
     100% {
-        bottom: 8px
+        bottom: 8px;
+        display: flex;
+    }
+}
+
+@keyframes navigationSliderTopToBottom {
+    0% {
+        top: -70px;
+        display: none;
+    }
+
+    100% {
+        top: 8px;
+        display: flex;
     }
 }
 
 @keyframes opacity {
     0% {
         opacity: 1;
+        display: flex;
     }
 
     100% {
         opacity: 0;
+        display: none;
     }
 }
 
@@ -405,7 +467,7 @@ button {
     }
 }
 
-@media (max-width: 744px) {
+@media (max-width: 808px) {
     .content-container {
         width: 568px;
     }
@@ -413,6 +475,10 @@ button {
     .header_content-wrapper {
         flex-direction: column;
         justify-content: space-between;
+    }
+
+    .stickyNavPopUp {
+        display: none;
     }
 
     .navigation {
@@ -425,7 +491,7 @@ button {
         margin-top: 24px;
     }
 
-    .navigation_buttons a::after {
+    .navigation_button::after {
         display: none;
     }
 
@@ -501,6 +567,7 @@ button {
     }
 
     .email_sending_form button {
+        justify-content: center;
         padding: 0px;
     }
 }
@@ -521,6 +588,10 @@ button {
 
     .navigation_buttons {
         flex-wrap: wrap;
+    }
+
+    .navigation_button::after {
+        display: none;
     }
 
     .project img {
@@ -557,7 +628,8 @@ button {
     .logoWithNameMobile {
         display: flex;
     }
-    .logoWithNameMobileModal{
+
+    .logoWithNameMobileModal {
         margin-top: 96px;
     }
 
@@ -597,31 +669,40 @@ button {
         display: flex;
         flex-direction: column;
     }
-    .teamPictures img{
+
+    .teamPictures img {
         width: 424px;
         object-fit: cover;
-        }
-        #teamPic1{
-            width: 100%;
-            height: 240px;
-            background-image:url(./img/mobile/Mobile_L_616/teamPicMobile1.svg);
-            background-repeat: no-repeat;
-        }
-        #teamPic2{
-            width: 100%;
-            height: 240px;
-            background-image:url(./img/mobile/Mobile_L_616/teamPicMobile2.svg);
-            background-repeat: no-repeat;
-        }
-        #teamPic3{
-            width: 100%;
-            height: 240px;
-            background-image:url(./img/mobile/Mobile_L_616/teamPicMobile3.svg);
-            background-repeat: no-repeat;
-        }
     }
 
-@media (max-width: 360px) {
+    #teamPic1 {
+        width: 100%;
+        height: 240px;
+        background-image: url(./img/mobile/Mobile_L_616/teamPicMobile1.svg);
+        background-repeat: no-repeat;
+    }
+
+    #teamPic2 {
+        width: 100%;
+        height: 240px;
+        background-image: url(./img/mobile/Mobile_L_616/teamPicMobile2.svg);
+        background-repeat: no-repeat;
+    }
+
+    #teamPic3 {
+        width: 100%;
+        height: 240px;
+        background-image: url(./img/mobile/Mobile_L_616/teamPicMobile3.svg);
+        background-repeat: no-repeat;
+    }
+
+    .stickyNavPopUp {
+        display: none;
+    }
+}
+
+
+@media (max-width: 472px) {
     .content-container {
         width: 312px;
     }
@@ -668,7 +749,8 @@ button {
     .logoWithNameMobile {
         display: flex;
     }
-    .logoWithNameMobileModal{
+
+    .logoWithNameMobileModal {
         margin-top: 96px;
     }
 
@@ -699,22 +781,29 @@ button {
         padding: 16px;
         width: 50%;
     }
-    #teamPic1{
+
+    #teamPic1 {
         width: 100%;
         height: 240px;
-        background-image:url(./img/mobile/Mobile_S_360/teamPicMobile1_360.svg);
+        background-image: url(./img/mobile/Mobile_S_360/teamPicMobile1_360.svg);
         background-repeat: no-repeat;
     }
-    #teamPic2{
+
+    #teamPic2 {
         width: 100%;
         height: 240px;
-        background-image:url(./img/mobile/Mobile_S_360/teamPicMobile2_360.svg);
+        background-image: url(./img/mobile/Mobile_S_360/teamPicMobile2_360.svg);
         background-repeat: no-repeat;
     }
-    #teamPic3{
+
+    #teamPic3 {
         width: 100%;
         height: 240px;
-        background-image:url(./img/mobile/Mobile_S_360/teamPicMobile3_360.svg);
+        background-image: url(./img/mobile/Mobile_S_360/teamPicMobile3_360.svg);
         background-repeat: no-repeat;
+    }
+
+    .stickyNavPopUp {
+        display: none;
     }
 }

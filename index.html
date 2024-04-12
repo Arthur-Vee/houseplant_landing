@@ -17,27 +17,33 @@
 <body>
     <div class="project-wrapper">
         <section id="header" class="header">
-            <div id="modalMenu" class="modalMenu">
+            <div aria-modal="true" role="dialog" id="modalMenu" class="modalMenu">
                 <div class="modalMenuContent">
                     <div class="content-container">
-                        <div class="modalContentWrapper">
+                        <div id="modalContentWrapper" class="modalContentWrapper">
                             <div class="logoWithNameMobileModal">
                                 <img src="/img/logo.svg" alt="">
-                                <div class="companyName inter-bold">House<br>Plant.</div>
                             </div>
                             <div onclick="closeModal()"
                                 class="navigation_buttons modal_navigation_buttons inter-regular">
-                                <a href="#work"><span>Work</span><img src="./img/arrowLeft_ModalNav.svg" alt=""></a>
-                                <a href="#whatWeDo"><span>What we do</span><img src="./img/arrowLeft_ModalNav.svg"
-                                        alt=""></a>
-                                <a href="#about"><span>About</span><img src="./img/arrowLeft_ModalNav.svg" alt=""></a>
-                                <a href="#contact"><span>Contact</span><img src="./img/arrowLeft_ModalNav.svg"
-                                        alt=""></a>
+                                <button onclick="location.href='#work'">
+                                    <span>Work</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
+                                </button>
+                                <button onclick="location.href='#whatWeDo'">
+                                    <span>What we do</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
+                                </button>
+                                <button onclick="location.href='#about'">
+                                    <span>About</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
+                                </button>
+                                <button onclick="location.href='#contact'">
+                                    <span>Contact</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
+                                </button>
+
                             </div>
-                            <span onclick="closeModal()" id="close" class="close"><img src="./img/modalCloseArrow.svg"
+                            <button onclick="closeModal()" id="close" class="close"><img src="./img/modalCloseArrow.svg"
                                     alt="">
                                 <p class="inter-italic hideButton">Hide</p>
-                            </span>
+                            </button>
 
                         </div>
                     </div>
@@ -47,8 +53,7 @@
             <div id="mobileNavWithHamburgerMenu" class="mobileNavWithHamburgerMenu">
                 <div id="mobileNavWithHamburgerMenuWrapper" class="mobileNavWithHamburgerMenuWrapper">
                     <div class="logoWithNameMobile burgerElement">
-                        <img src="/img/logo.svg" alt="">
-                        <div class="companyName inter-bold">House<br>Plant.</div>
+                        <img src="/img/navLogo.svg" alt="">
                     </div>
                     <div class="burgerMenuDivider"></div>
                     <div id="burger_menu" class="burger_menu burgerElement">
@@ -58,22 +63,48 @@
                     </div>
                 </div>
             </div>
+            <div id="stickyNavPopUp" class="stickyNavPopUp">
+                <div id="stickyNavPopUpWrapper" class="stickyNavPopUpWrapper">
+                    <div class="stickyNavPopUpLogoWithName burgerElement">
+                        <img src="/img/navLogo.svg" alt="">
+                    </div>
+                    <div class="burgerMenuDivider"></div>
+                    <button onclick="location.href='#work'">
+                        <span>Work</span>
+                    </button>
+                    <div class="burgerMenuDivider"></div>
+                    <button onclick="location.href='#whatWeDo'">
+                        <span>What we do</span>
+                    </button>
+                    <div class="burgerMenuDivider"></div>
+                    <button onclick="location.href='#about'">
+                        <span>About</span>
+                    </button>
+                    <div class="burgerMenuDivider"></div>
+                    <button onclick="location.href='#contact'">
+                        <span>Contact</span>
+                    </button>
+                </div>
+            </div>
             <div class="content-container">
                 <div class="header_content-wrapper">
                     <div class="logo">
                         <div class="logoWithName">
                             <img src="/img/logo.svg" alt="">
-                            <div class="companyName inter-bold">House<br>Plant.</div>
                         </div>
                     </div>
                     <div class="navigation">
                         <p>Design & development studio from Riga.<br>
                             houseplant@gmail.com</p>
                         <div class="navigation_buttons inter-regular">
-                            <a href="#work">Work</a>
-                            <a href="#whatWeDo">What we do</a>
-                            <a href="#about">About</a>
-                            <a href="#contact">Contact</a>
+                            <button class="navigation_button" onclick="location.href='#work'">Work</button>
+                            <button class="navigation_button" onclick="location.href='#whatWeDo'">What we do</button>
+                            <button class="navigation_button" onclick="location.href='#about'">About</button>
+                            <button onclick="location.href='#contact'">Contact</button>
+
+
+
+
                         </div>
                     </div>
 
@@ -194,8 +225,9 @@
                     specific questions about your project and pricing. You can use the form below or send an email to
                     houseplant@gmail.com</p>
                 <form class="email_sending_form" action="https://formspree.io/f/mnqeoaol" method="POST">
-                    <input class="formEmelemnt" placeholder="Your email..." type="email" name="email" id="email">
-                    <input class="formEmelemnt" placeholder="Your message..." type="textarea" name="userText"
+                    <input required class="formEmelemnt" placeholder="Your email..." type="email" name="email"
+                        id="email">
+                    <input required class="formEmelemnt" placeholder="Your message..." type="textarea" name="userText"
                         id="userText">
                     <button class="contact_form-button formEmelemnt" type="submit">Send</button>
                 </form>
