@@ -116,6 +116,7 @@ button:hover {
 
 .mobileNavWithHamburgerMenu {
     display: none;
+    z-index: 1;
 }
 
 /* Navigation that is for screens wider that tablet */
@@ -125,6 +126,7 @@ button:hover {
     top: 8px;
     left: 8px;
     animation: navigationSliderTopToBottom 0.5s ease-in;
+    animation-direction: normal;
     z-index: 1;
 }
 
@@ -153,7 +155,7 @@ button:hover {
 }
 
 .stickyNavPopUpLogoWithName {
-    margin: 0px 72px 0px 16px;
+    padding: 0px 72px 0px 16px;
 }
 
 .burgerMenuDivider {
@@ -385,6 +387,18 @@ button:hover {
     }
 }
 
+@keyframes navigationSlider-reverse {
+    0% {
+        bottom: 8px;
+        display: flex;
+    }
+
+    100% {
+        bottom: -70px;
+        display: none;
+    }
+}
+
 @keyframes navigationSliderTopToBottom {
     0% {
         top: -70px;
@@ -394,6 +408,19 @@ button:hover {
     100% {
         top: 8px;
         display: flex;
+    }
+}
+
+@keyframes navigationSliderTopToBottom-reverse {
+
+    0% {
+        top: 8px;
+        display: flex;
+    }
+
+    100% {
+        top: -70px;
+        display: none;
     }
 }
 
@@ -615,7 +642,7 @@ button:hover {
 
     .mobileNavWithHamburgerMenu {
         margin: 0 auto;
-        display: flex;
+        display: none;
         position: fixed;
         justify-content: center;
         width: 100%;
@@ -627,7 +654,9 @@ button:hover {
     }
 
     .mobileNavWithHamburgerMenuWrapper {
-        width: 80%;
+        width: 100%;
+        margin-left: 8px;
+        margin-right: 8px;
         height: 64px;
         border-radius: 8px;
         background-color: #FFE27C;
@@ -736,7 +765,7 @@ button:hover {
 
     .mobileNavWithHamburgerMenu {
         margin: 0 auto;
-        display: flex;
+        display: none;
         position: fixed;
         justify-content: center;
         width: 100%;
@@ -748,7 +777,9 @@ button:hover {
     }
 
     .mobileNavWithHamburgerMenuWrapper {
-        width: 80%;
+        width: 100%;
+        margin-left: 8px;
+        margin-right: 8px;
         height: 64px;
         border-radius: 8px;
         background-color: #FFE27C;

@@ -14,14 +14,14 @@ const inputElements = document.querySelectorAll("input[class='formEmelemnt']");
 burgerBtn.onclick = function () {
     modal.style.display = "block";
     modalContentWrapper.style.display = "flex"
+    mobileNavSlider.style.display = "none"
 }
 
 function closeModal() {
     modal.style.display = "none";
+    mobileNavSlider.style.display = "flex"
 }
-function mobileNavSliderCloser() {
-    mobileNavSlider.style.display = 'none'
-}
+
 
 window.addEventListener("scroll", function () {/* Navigation Slider Logic */
     var headerElem = document.getElementById("header");
@@ -32,7 +32,7 @@ window.addEventListener("scroll", function () {/* Navigation Slider Logic */
             navSlider.style.animation = "navigationSliderTopToBottom 0.5s ease-in-out"
         }
         if (window.scrollY < headerElem.offsetTop + headerElem.offsetHeight) {
-            navSlider.style.animation = "opacity 1s ease-in"
+            navSlider.style.animation = "navigationSliderTopToBottom-reverse 0.5s ease-in-out"
             navSlider.style.animationFillMode = "forwards"
 
 
@@ -48,7 +48,7 @@ window.addEventListener("scroll", function () {/* Navigation Slider Logic */
         }
         if (window.scrollY < headerElem.offsetTop + headerElem.offsetHeight) {
             /* Animation when user scrolls back on top is needed for the popUp navigation */
-            mobileNavSlider.style.animation = "opacity 1s ease-in"
+            mobileNavSlider.style.animation = "navigationSlider-reverse 0.5s ease-in"
             mobileNavSlider.style.animationFillMode = "forwards"
 
         }
