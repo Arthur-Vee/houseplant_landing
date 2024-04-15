@@ -58,10 +58,11 @@ button:hover {
     color: #DADADA;
     background-color: rgba(0, 0, 0, 0.16)
 }
-:focus{
-    border: 2px solid blue;
-    outline-style: dotted;  /* Set outline style to dotted */
-     outline-color: red; 
+
+:focus {
+    outline-style: dotted;
+    /* Set outline style to dotted */
+    outline-color: red;
 }
 
 
@@ -124,6 +125,7 @@ button:hover {
     top: 8px;
     left: 8px;
     animation: navigationSliderTopToBottom 0.5s ease-in;
+    z-index: 1;
 }
 
 .stickyNavPopUpWrapper {
@@ -138,12 +140,16 @@ button:hover {
 .stickyNavPopUpWrapper button {
     display: flex;
     align-items: center;
-    height: 52px;
+    height: 100%;
     background-color: transparent;
     color: #000000;
     font-style: italic;
     border-style: none;
     cursor: pointer;
+}
+
+.stickyNavPopUpWrapper button:hover {
+    background-color: #EBCE68;
 }
 
 .stickyNavPopUpLogoWithName {
@@ -169,6 +175,11 @@ button:hover {
 .project {
     display: flex;
     align-items: center;
+    z-index: -1;
+}
+
+.project:hover {
+    opacity: 0.9;
 }
 
 .project img {
