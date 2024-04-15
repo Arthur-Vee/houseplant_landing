@@ -1,3 +1,7 @@
+body {
+    font-family: "Inter", sans-serif;
+}
+
 .image {
     width: -webkit-fill-available;
     height: 400px;
@@ -44,10 +48,13 @@
     font-family: 'Archivo Black', sans-serif;
     font-size: 64px;
     margin-bottom: 24px;
+    font-weight: 500;
 
 }
 
 .projectPageText {
+    font-style: italic;
+    font-size: 16px;
     width: 600px;
 }
 
@@ -205,10 +212,12 @@
     .footerImage {
         width: 100%;
     }
-    .projectTitle{
+
+    .projectTitle {
         font-size: 32px;
     }
-    .projectPageText{
+
+    .projectPageText {
         width: auto;
     }
 }
@@ -239,10 +248,12 @@
     .footerImage {
         width: 100%;
     }
-    .projectTitle{
+
+    .projectTitle {
         font-size: 32px;
     }
-    .projectPageText{
+
+    .projectPageText {
         width: auto;
     }
 }
