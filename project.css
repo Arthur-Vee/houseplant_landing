@@ -2,10 +2,16 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-.image {
-    width: -webkit-fill-available;
+img{
+    width: 100%;
     height: 400px;
-    background-image: url(./img/project1.svg);
+    object-fit: cover;
+}
+
+.navigationLogo img{
+    width: auto;
+    height: auto;
+    object-fit: none;
 }
 
 .imageCaption {
@@ -14,6 +20,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    color: rgba(0, 0, 0, 0.5);
+    font-style: italic;
 }
 
 .projectPageHeader {
@@ -28,12 +36,19 @@ body {
 }
 
 .navigation button {
-    background-color: #F7F7F7;
+    background-color: rgba(247, 247, 247, 1);
     color: #2C2C2C;
+    outline: none;
 }
 
 .navigation_button::after {
     background-color: #F7F7F7;
+    outline: none;
+}
+
+.projectnavigationButton:hover{
+    background-color: hsl(0, 0%, 84%);
+    cursor: pointer;
 }
 
 .projectContentInnerWrapper {
@@ -47,15 +62,26 @@ body {
 .projectTitle {
     font-family: 'Archivo Black', sans-serif;
     font-size: 64px;
+    margin-top: 24px;
     margin-bottom: 24px;
-    font-weight: 500;
+    width: 417px;
 
+}
+
+.footerProjectTitle {
+    margin-top: 56px;
+    font-size: 54px;
 }
 
 .projectPageText {
     font-style: italic;
     font-size: 16px;
     width: 600px;
+    line-height: 24px;
+}
+
+.projectPageFooterText {
+    width: 440px;
 }
 
 .doubleProjectImageWrapper {
@@ -73,10 +99,6 @@ body {
     margin-top: 2px;
     display: flex;
     gap: 2px;
-}
-
-.tripleProjectImagewrapper img {
-    width: 50%;
 }
 
 .projectPageFooter {
@@ -98,6 +120,10 @@ body {
     color: #2C2C2C;
 }
 
+.logo:hover {
+    cursor: pointer;
+}
+
 .logoWithName {
     width: 51px;
     height: 72px;
@@ -114,7 +140,6 @@ body {
 
 .footerImage {
     width: 50%;
-    background-image: url(./img/project1.svg);
 }
 
 .footerBottomlogo {
@@ -124,6 +149,10 @@ body {
 @media (min-width: 1191px) {
     .content-container {
         width: 1144px;
+    }
+
+    .projectPageFooterText {
+        width: 440px;
     }
 }
 
@@ -139,6 +168,10 @@ body {
         width: 100%;
         padding-top: 96px;
         padding-bottom: 96px;
+    }
+
+    .projectPageFooterText {
+        width: 600px;
     }
 
     .footerContent {
@@ -177,6 +210,10 @@ body {
         padding-bottom: 96px;
     }
 
+    .projectPageFooterText {
+        width: auto;
+    }
+
     .footerContent {
         width: 100%;
     }
@@ -195,6 +232,14 @@ body {
     .navigation {
         display: none;
     }
+    .mobileNavWithHamburgerMenu {
+        width: inherit;
+    }
+
+    .projectContentInnerWrapper {
+        margin-top: 48px;
+        gap: 48px;
+    }
 
     .projectPageFooter {
         display: flex;
@@ -203,6 +248,11 @@ body {
         width: 100%;
         padding-top: 96px;
         padding-bottom: 96px;
+    }
+
+    .projectPageFooterText {
+        margin-top: 24px;
+        width: auto;
     }
 
     .footerContent {
@@ -214,16 +264,33 @@ body {
     }
 
     .projectTitle {
+        margin-top: 24px;
         font-size: 32px;
     }
 
     .projectPageText {
         width: auto;
     }
+
+    .doubleProjectImageWrapper> :last-child {
+        display: none;
+    }
+
+    .tripleProjectImagewrapper> :last-child {
+        display: none;
+    }
+
 }
 
 
 @media (max-width: 472px) {
+    img{
+        height: 312px;
+    }
+    .image {
+        height: 312px;
+    }
+
     .content-container {
         width: 312px;
     }
@@ -232,28 +299,58 @@ body {
         display: none;
     }
 
+    .projectContentInnerWrapper {
+        margin-top: 48px;
+        gap: 48px;
+    }
+
     .projectPageFooter {
         display: flex;
         flex-direction: column;
-        gap: 72px;
+        gap: 48px;
         width: 100%;
-        padding-top: 96px;
-        padding-bottom: 96px;
+        padding-top: 72px;
+        padding-bottom: 72px;
+    }
+
+    .projectPageFooterText {
+        margin-top: 24px;
+        width: auto;
     }
 
     .footerContent {
         width: 100%;
     }
 
-    .footerImage {
+    .projectImage1 {
         width: 100%;
+        height: 312px;
+    }
+
+    .projectImage2 {
+        width: 100%;
+        height: 312px;
+    }
+
+    .projectImage3 {
+        width: 100%;
+        height: 312px;
     }
 
     .projectTitle {
         font-size: 32px;
+        margin-top: 24px;
     }
 
     .projectPageText {
         width: auto;
+    }
+
+    .doubleProjectImageWrapper> :last-child {
+        display: none;
+    }
+
+    .tripleProjectImagewrapper> :last-child {
+        display: none;
     }
 }

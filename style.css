@@ -3,19 +3,27 @@
     margin: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
 
 body {
+    overflow: auto;
     font-family: "Inter", sans-serif;
+    box-sizing: border-box;
+    line-height: 1;
+
 }
 
 a {
     text-decoration: none;
-    outline: none;
     transition: none;
     scroll-behavior: auto;
+    cursor: pointer;
+
+}
+
+a:focus {
+    outline-color: #FF007A;
+    outline-style: dashed;
+    border: none;
 }
 
 p {
@@ -29,7 +37,6 @@ p {
 
 .inter-italic {
     font-family: "Inter", sans-serif;
-    font-weight: 400;
     font-style: italic;
 }
 
@@ -39,6 +46,12 @@ p {
     font-style: normal;
 }
 
+input:focus {
+    outline-color: #FF007A;
+    outline-style: dashed;
+    border: none;
+}
+
 button {
     display: flex;
     align-items: center;
@@ -46,24 +59,31 @@ button {
     height: 52px;
     padding: 14px 24px;
     font-family: "Inter", sans-serif;
-    background-color: #000000;
+    background-color: rgba(0, 0, 0);
     font-size: 16px;
     color: #DADADA;
     font-style: italic;
     border-style: none;
-    cursor: pointer;
+    outline-color: transparent;
+    outline-style: transparent;
+
 }
 
 button:hover {
-    color: #DADADA;
-    background-color: rgba(0, 0, 0, 0.16)
+    background-color: hsl(0, 0%, 16%);
+    cursor: pointer;
 }
 
-:focus {
-    outline-style: dotted;
-    /* Set outline style to dotted */
-    outline-color: red;
+button:focus-visible {
+    outline-color: #FF007A;
+    outline-style: dashed;
 }
+
+button:active {
+    outline-color: transparent;
+    outline-style: transparent;
+}
+
 
 
 .content-container {
@@ -92,13 +112,24 @@ button:hover {
 .navigation {
     display: flex;
     flex-direction: row;
+    align-items: flex-end;
     justify-content: space-between;
     width: 100%;
+}
+
+.navigation p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
 }
 
 .navigation_buttons {
     display: flex;
     gap: 4px;
+
+}
+.navigation_buttons button {
+    padding: 14px 24px 14px 24px;
+
 }
 
 .navigation_button::after {
@@ -141,8 +172,11 @@ button:hover {
 
 .stickyNavPopUpWrapper button {
     display: flex;
+    padding: 0;
     align-items: center;
+    justify-content: center;
     height: 100%;
+    width: 128px;
     background-color: transparent;
     color: #000000;
     font-style: italic;
@@ -173,10 +207,35 @@ button:hover {
     font-size: 128px;
 }
 
+.projects_showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+}
+
 .project {
+    height: 400px;
     display: flex;
     align-items: center;
     z-index: -1;
+    cursor: pointer;
+}
+
+
+.projectWrapperButton {
+    color: #000000;
+    padding: 0;
+    z-index: 0;
+    background-color: transparent;
+}
+
+.projectWrapperButton:hover {
+    background-color: transparent;
+}
+
+.projectWrapperButton:focus-visible {
+    outline-color: #FF007A;
+    outline-style: dashed;
 }
 
 .project:hover {
@@ -184,7 +243,8 @@ button:hover {
 }
 
 .project img {
-    width: 800px;
+    height: 400px;
+    object-fit: cover;
 }
 
 .decorLineForProject {
@@ -201,11 +261,14 @@ button:hover {
 }
 
 .projectText {
+    font-style: italic;
     font-size: 16px;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
     width: 143px;
+    line-height: 24px;
 }
 
 .listing {
@@ -243,6 +306,11 @@ button:hover {
     flex-wrap: wrap;
 }
 
+.personDetails {
+    font-style: italic;
+    line-height: 24px;
+}
+
 .teamPictures {
     display: flex;
     flex-direction: row;
@@ -270,6 +338,10 @@ button:hover {
     background-color: #010101;
 }
 
+input::placeholder {
+    font-style: italic;
+}
+
 .email_sending_form {
     display: flex;
     border: solid 1px black;
@@ -290,11 +362,17 @@ button:hover {
     height: 244px;
 }
 
+.contact_form-button {
+    max-width: 244px;
+}
+
 .paragraphTexts {
     font-style: italic;
     max-width: 600px;
     margin-top: 24px;
     margin-bottom: 72px;
+    font-size: 16px;
+    line-height: 24px;
 }
 
 /* Modal Window Styles */
@@ -304,10 +382,11 @@ button:hover {
     z-index: 1;
     left: 0;
     top: 0;
+    bottom: 0;
     width: 100%;
     height: 100%;
     background-color: #FFE27C;
-    overflow: auto;
+    animation: modalSliderTopToBottom 0.3s ease-in;
 }
 
 .modalContentWrapper {
@@ -356,7 +435,7 @@ button:hover {
 .close:hover,
 .close:focus {
     color: black;
-    background-color: transparent;
+    background-color: #EBCE68;;
     text-decoration: none;
     cursor: pointer;
 }
@@ -423,26 +502,43 @@ button:hover {
     }
 }
 
-@keyframes opacity {
+@keyframes modalSliderTopToBottom {
     0% {
-        opacity: 1;
-        display: flex;
+        top: 100vh;
+        display: none;
     }
 
     100% {
-        opacity: 0;
+        bottom: 0px;
+        display: block;
+    }
+}
+
+@keyframes modalSliderTopToBottom-reverse {
+
+
+    0% {
+        bottom: 0px;
+        display: block;
+    }
+
+    100% {
+        top: 100vh;
         display: none;
     }
 }
 
-
+/* Desktop L */
 @media (min-width: 1191px) {
+
     .content-container {
         width: 1144px;
     }
 }
 
+/* Desktop S */
 @media (max-width: 1190px) {
+
     .content-container {
         width: 952px;
     }
@@ -454,7 +550,6 @@ button:hover {
 
     .navigation {
         flex-direction: row;
-        align-items: flex-end;
         justify-content: space-between;
         width: 100%;
     }
@@ -464,6 +559,7 @@ button:hover {
     }
 
     .project img {
+    
         width: 709px;
     }
 
@@ -482,7 +578,10 @@ button:hover {
 
 }
 
+
+/* Tables L */
 @media (max-width: 1000px) {
+
     .content-container {
         width: 760px;
     }
@@ -504,6 +603,8 @@ button:hover {
     }
 }
 
+
+/* Tables S */
 @media (max-width: 808px) {
     .content-container {
         width: 568px;
@@ -536,8 +637,12 @@ button:hover {
         padding-top: 40px;
         padding-bottom: 40px;
     }
+    .projects_showcase{
+        gap: 24px;
+    }
 
     .project {
+        height: auto;
         justify-content: center;
         display: flex;
         flex-direction: column;
@@ -545,6 +650,7 @@ button:hover {
     }
 
     .project img {
+        height: 320px;
         width: 568px;
     }
 
@@ -555,7 +661,6 @@ button:hover {
     .projectText {
         width: 100%;
         justify-content: flex-start;
-        margin-bottom: 24px;
     }
 
     .decorLineForTeamPic {
@@ -607,9 +712,16 @@ button:hover {
         justify-content: center;
         padding: 0px;
     }
+
+    .contact_form-button {
+        max-width: none
+    }
 }
 
+
+/* Mobile L */
 @media (max-width: 616px) {
+
     .content-container {
         width: 424px;
     }
@@ -630,8 +742,12 @@ button:hover {
     .navigation_button::after {
         display: none;
     }
+    .project{
+        height: auto;
+    }
 
     .project img {
+        height: 320px;
         width: 424px;
     }
 
@@ -647,7 +763,7 @@ button:hover {
         width: 100%;
         bottom: 8px;
         opacity: 1;
-        animation: opacity 1s ease-in;
+        animation: opacity 0.3s ease-in;
         animation-fill-mode: forwards;
 
     }
@@ -741,20 +857,45 @@ button:hover {
 }
 
 
+/* Mobile S */
 @media (max-width: 472px) {
+
     .content-container {
         width: 312px;
     }
 
     .title {
         font-size: 62px;
+        margin-top: 72px;
     }
 
     .listing {
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+        text-align: center;
+        text-wrap: nowrap;
+        padding-top: 26px;
+        padding-left: 14px;
+        padding-right: 14px;
         flex: 1 1 130px;
+    }
+    .webDevelopment_offer{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        text-wrap: nowrap;
+        padding-top: 26px;
+        padding-left: 9px;
+        padding-right: 9px;
+    }
+        
+    .project{
+        height: auto;
     }
 
     .project img {
+        height: 320px;
         width: 312px;
     }
 

@@ -9,16 +9,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="app.js"></script>
     <title>Document</title>
 </head>
 
 <body>
-    <div class="project-wrapper">
+    <div id="project-wrapper" class="project-wrapper">
         <section id="header" class="header">
             <div aria-modal="true" role="dialog" id="modalMenu" class="modalMenu">
-                <div class="modalMenuContent">
+                <div id="modalMenuContent" class="modalMenuContent">
                     <div class="content-container">
                         <div id="modalContentWrapper" class="modalContentWrapper">
                             <div class="logoWithNameMobileModal">
@@ -26,23 +27,23 @@
                             </div>
                             <div onclick="closeModal()"
                                 class="navigation_buttons modal_navigation_buttons inter-regular">
-                                <button onclick="location.href='#work'">
+                                <button id="modalWorkButton" onclick="scrollToSection('work')">
                                     <span>Work</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
                                 </button>
-                                <button onclick="location.href='#whatWeDo'">
+                                <button onclick="scrollToSection('whatWeDo')">
                                     <span>What we do</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
                                 </button>
-                                <button onclick="location.href='#about'">
+                                <button onclick="scrollToSection('about')">
                                     <span>About</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
                                 </button>
-                                <button onclick="location.href='#contact'">
+                                <button onclick="scrollToSection('contact')">
                                     <span>Contact</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
                                 </button>
 
                             </div>
                             <button onclick="closeModal()" id="close" class="close"><img src="./img/modalCloseArrow.svg"
                                     alt="">
-                                <p class="inter-italic hideButton">Hide</p>
+                                <p class=" hideButton">Hide</p>
                             </button>
 
                         </div>
@@ -52,7 +53,7 @@
             </div>
             <div id="mobileNavWithHamburgerMenu" class="mobileNavWithHamburgerMenu">
                 <div id="mobileNavWithHamburgerMenuWrapper" class="mobileNavWithHamburgerMenuWrapper">
-                    <div onclick="location.href='#header'" class="logoWithNameMobile burgerElement">
+                    <div onclick="scrollToSection('header')" class="logoWithNameMobile burgerElement">
                         <img src="/img/navLogo.svg" alt="">
                     </div>
                     <div class="burgerMenuDivider"></div>
@@ -65,23 +66,23 @@
             </div>
             <div id="stickyNavPopUp" class="stickyNavPopUp">
                 <div id="stickyNavPopUpWrapper" class="stickyNavPopUpWrapper">
-                    <div onclick="location.href='#header'" class="stickyNavPopUpLogoWithName burgerElement">
+                    <div onclick="scrollToSection('header')" class="stickyNavPopUpLogoWithName burgerElement">
                         <img src="/img/navLogo.svg" alt="">
                     </div>
                     <div class="burgerMenuDivider"></div>
-                    <button onclick="location.href='#work'">
+                    <button tabindex="8" onclick="scrollToSection('work')">
                         <span>Work</span>
                     </button>
                     <div class="burgerMenuDivider"></div>
-                    <button onclick="location.href='#whatWeDo'">
+                    <button tabindex="9" onclick="scrollToSection('whatWeDo')">
                         <span>What we do</span>
                     </button>
                     <div class="burgerMenuDivider"></div>
-                    <button onclick="location.href='#about'">
+                    <button tabindex="10" onclick="scrollToSection('about')">
                         <span>About</span>
                     </button>
                     <div class="burgerMenuDivider"></div>
-                    <button onclick="location.href='#contact'">
+                    <button tabindex="11" onclick="scrollToSection('contact')">
                         <span>Contact</span>
                     </button>
                 </div>
@@ -97,14 +98,14 @@
                         <p>Design & development studio from Riga.<br>
                             houseplant@gmail.com</p>
                         <div class="navigation_buttons inter-regular">
-                            <button class="navigation_button" onclick="location.href='#work'">Work</button>
-                            <button class="navigation_button" onclick="location.href='#whatWeDo'">What we do</button>
-                            <button class="navigation_button" onclick="location.href='#about'">About</button>
-                            <button onclick="location.href='#contact'">Contact</button>
-
-
-
-
+                            <button tabindex="1" class="navigation_button button withHover"
+                                onclick="scrollToSection('work')">Work</button>
+                            <button class="navigation_button button withHover" onclick="scrollToSection('whatWeDo')"
+                                tabindex="2">What we
+                                do</button>
+                            <button class="navigation_button button withHover" onclick="scrollToSection('about') "
+                                tabindex="3">About</button>
+                            <button onclick="scrollToSection('contact')" tabindex="4">Contact</button>
                         </div>
                     </div>
 
@@ -115,33 +116,37 @@
             <div class="content-container">
                 <div class="title ">WORK</div>
                 <div class="projects_showcase">
-                    <div onclick="location.href='project.html'" class="project project1">
-                        <a class="projectImage" href="http://"></a>
-                        <img src="/img/project1.svg" alt="">
-                        <div class="decorLineForProject"></div>
-                        <div class="projectText inter-italic">
-                            <div class="projectTitle">Project title</div>
-                            <div class="projectDescription">Project description</div>
+                    <a onclick="goToProject(1)" class="projectWrapperButton" tabindex="5">
+                        <!-- This needs to be reworked on tab element are getting focused only on chrome and not other browsers-->
+                        <div onclick="goToProject(1)" id="project1" class="project project1">
+                            <img src="/img/project1.svg" alt="">
+                            <div class="decorLineForProject"></div>
+                            <div class="projectText ">
+                                <div class="projectTitle">Project title</div>
+                                <div class="projectDescription">Project description</div>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="location.href='project.html'" class="project project2">
-                        <a class="projectImage2" href="http://"></a>
-                        <img src="/img/project2.svg" alt="">
-                        <div class="decorLineForProject"></div>
-                        <div class="projectText inter-italic">
-                            <div class="projectTitle">Project title</div>
-                            <div class="projectDescription">Project description</div>
+                    </a>
+                    <a onclick="goToProject(2)" class="projectWrapperButton" tabindex="6">
+                        <div class="project project2">
+                            <img src="/img/project2.svg" alt="">
+                            <div class="decorLineForProject"></div>
+                            <div class="projectText ">
+                                <div class="projectTitle">Project title</div>
+                                <div class="projectDescription">Project description</div>
+                            </div>
                         </div>
-                    </div>
-                    <div onclick="location.href='project.html'" class="project project3">
-                        <a class="projectImage3" href="http://"></a>
-                        <img src="/img/project3.svg" alt="">
-                        <div class="decorLineForProject"></div>
-                        <div class="projectText inter-italic">
-                            <div class="projectTitle">Project title</div>
-                            <div class="projectDescription">Project description</div>
+                    </a>
+                    <a onclick="goToProject(3)" class="projectWrapperButton" tabindex="7">
+                        <div class="project project3">
+                            <img src="/img/project3.svg" alt="">
+                            <div class="decorLineForProject"></div>
+                            <div class="projectText ">
+                                <div class="projectTitle">Project title</div>
+                                <div class="projectDescription">Project description</div>
+                            </div>
                         </div>
-                    </div>
+                    </a>
 
                 </div>
             </div>
@@ -184,11 +189,11 @@
         <section id="about" class="about">
             <div class="content-container">
                 <div class="title">ABOUT</div>
-                <div class="inter-italic about_content">
-                    <p class="inter-italic paragraphTexts">Houseplant is a small web design studio from Riga. A group of
+                <div class="about_content">
+                    <p class="paragraphTexts">Houseplant is a small web design studio from Riga. A group of
                         freelancers working on hobby projects and websites for small businesses. Houseplant is a small
                         web design studio from Riga.</p>
-                    <div class="teamPictures inter-italic">
+                    <div class="teamPictures ">
                         <!--need to fix this class cause it will be global for projects and persons-->
                         <img id="teamPic1" src="./img/teamPic1.svg">
                         <div class="decorLineForTeamPic"></div>
@@ -224,12 +229,12 @@
                 <p class="paragraphTexts">Send all your questions via email, to learn more about what we do and ask more
                     specific questions about your project and pricing. You can use the form below or send an email to
                     houseplant@gmail.com</p>
-                <form class="email_sending_form" action="https://formspree.io/f/mnqeoaol" method="POST">
-                    <input required class="formEmelemnt" placeholder="Your email..." type="email" name="email"
-                        id="email">
-                    <input required class="formEmelemnt" placeholder="Your message..." type="textarea" name="userText"
-                        id="userText">
-                    <button class="contact_form-button formEmelemnt" type="submit">Send</button>
+                <form id="emailForm" class="email_sending_form withHover" method="">
+                    <input tabindex="12" id="formEmail" required class="formEmelemnt" placeholder="Your email..." type="email"
+                        name="email" id="email">
+                    <input tabindex="13" id="formText" required class="formEmelemnt" placeholder="Your message..." type="textarea"
+                        name="userText" id="userText">
+                    <button tabindex="14" id="formSubmitButton" class="contact_form-button formEmelemnt">Send</button>
                 </form>
             </div>
         </section>

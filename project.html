@@ -7,97 +7,129 @@
     <title>Document</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="project.css">
+    <script defer src="projectPageApp.js"></script>
 </head>
 
 <body>
-    <div class="content-container">
-        <div class="projectPageHeader">
-            <div onclick="location.href='index.html#header'" class="logo">
-                <div class="logoWithName">
-                </div>
-            </div>
-            <div class="navigation">
-                <div class="navigation_buttons">
-                    <button class="navigation_button" onclick="location.href='index.html#work'">Work</button>
-                    <button class="navigation_button" onclick="location.href='index.html#whatWeDo'">What we do</button>
-                    <button class="navigation_button" onclick="location.href='index.html#about'">About</button>
-                    <button onclick="location.href='index.html#contact'">Contact</button>
-                </div>
-            </div>
-        </div>
-        <div class="projectContentInnerWrapper">
-            <div class="titleWithText">
-                <h1 class="projectTitle">Project title</h1>
-                <div class="projectPageText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                    sequi ex quibusdam in fuga fugit natus sunt obcaecati! Ipsum odio ducimus sapiente natus dolor
-                    laboriosam soluta rerum accusantium corporis quis.</div>
-            </div>
-            <div class="singleProjectImage">
-                <div class="image"></div>
-                <div class="imageCaption">Caption</div>
-            </div>
-            <div class="projectPageText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi sequi
-                ex quibusdam in fuga fugit natus sunt obcaecati! Ipsum odio ducimus sapiente natus dolor laboriosam
-                soluta rerum accusantium corporis quis.</div>
-            <div class="doubleProjectImage">
-                <div class="doubleProjectImageWrapper">
-                    <div class="image"></div>
-                    <div class="image"></div>
-                </div>
-                <div class="imageCaption">Caption</div>
-            </div>
-            <div class="titleWithText">
-                <h1 class="projectTitle">Project title</h1>
-                <div class="projectPageText">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi
-                    sequi ex quibusdam in fuga fugit natus sunt obcaecati! Ipsum odio ducimus sapiente natus dolor
-                    laboriosam soluta rerum accusantium corporis quis.</div>
-            </div>
-            <div class="tripleProjectImage">
-                <div class="image"></div>
-                <div class="tripleProjectImagewrapper">
-                    <div class="image"></div>
-                    <div class="image"></div>
-                </div>
-                <div class="imageCaption">Caption</div>
-            </div>
-        </div>
-    </div>
-
-    <section class="footerSection">
-        </div>
+    <div id="projectPage_container" class="projectPage_container">
         <div class="content-container">
-            <div class="projectPageFooter">
-                <div class="footerContent">
-                    <div class="footerlogo">
-                        <div class="logoWithName">
-                        </div>
-                    </div>
-                    <div class="titleWithText">
-                        <h1 class="projectTitle">Project title</h1>
-                        <div class="projectPageFooterText projectPageText">Lorem ipsum dolor sit amet consectetur
-                            adipisicing
-                            elit. Nisi sequi ex quibusdam in fuga fugit natus sunt obcaecati! Ipsum odio ducimus
-                            sapiente
-                            natus dolor laboriosam soluta rerum accusantium corporis quis.</div>
-                    </div>
-                    <button class="footerButton inter-regular">View project</button>
-                </div>
-                <div class="footerImage">
-                    <div class="image"></div>
-                </div>
-                <div class="footerBottomlogo">
+            <div id="header" class="projectPageHeader">
+                <div onclick="location.href='index.html#header'" class="logo">
                     <div class="logoWithName">
                     </div>
                 </div>
-
+                <div class="navigation">
+                    <div class="navigation_buttons">
+                        <button class="navigation_button projectnavigationButton" onclick="location.href='index.html#work'">Work</button>
+                        <button class="navigation_button projectnavigationButton" onclick="location.href='index.html#whatWeDo'">What we
+                            do</button>
+                        <button class="navigation_button projectnavigationButton" onclick="location.href='index.html#about'">About</button>
+                        <button class="projectnavigationButton" onclick="location.href='index.html#contact'">Contact</button>
+                    </div>
+                </div>
             </div>
 
-    </section>
-    </div>
+            <div id="mobileNavWithHamburgerMenu" class="mobileNavWithHamburgerMenu">
+                <div id="mobileNavWithHamburgerMenuWrapper" class="mobileNavWithHamburgerMenuWrapper">
+                    <div onclick="scrollToSection('header')" class="logoWithNameMobile burgerElement navigationLogo">
+                        <img class="logo" src="/img/navLogo.svg" alt="">
+                    </div>
+                    <div class="burgerMenuDivider"></div>
+                    <div id="burger_menu" class="burger_menu burgerElement">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div id="stickyNavPopUp" class="stickyNavPopUp">
+                <div id="stickyNavPopUpWrapper" class="stickyNavPopUpWrapper">
+                    <div onclick="scrollToSection('header')" class="stickyNavPopUpLogoWithName burgerElement navigationLogo">
+                        <img src="/img/navLogo.svg" alt="">
+                    </div>
+                    <div class="burgerMenuDivider"></div>
+                    <button class="projectnavigationButton" tabindex="8" onclick="scrollToSection('work')">
+                        <span>Work</span>
+                    </button>
+                    <div class="burgerMenuDivider"></div>
+                    <button class="projectnavigationButton" tabindex="9" onclick="scrollToSection('whatWeDo')">
+                        <span>What we do</span>
+                    </button>
+                    <div class="burgerMenuDivider"></div>
+                    <button class="projectnavigationButton" tabindex="10" onclick="scrollToSection('about')">
+                        <span>About</span>
+                    </button>
+                    <div class="burgerMenuDivider"></div>
+                    <button class="projectnavigationButton" tabindex="11" onclick="scrollToSection('contact')">
+                        <span>Contact</span>
+                    </button>
+                </div>
+            </div>
 
+            <div class="projectContentInnerWrapper">
+                <div class="titleWithText">
+                    <h1 class="projectTitle">##PROJECT_NAME##</h1>
+                    <div class="projectPageText">##PROJECT_DESCRIPTION##</div>
+                </div>
+                <div class="singleProjectImage">
+                    <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
+                    <div class="imageCaption">Caption</div>
+                </div>
+                <div class="projectPageText">##PROJECT_DESCRIPTION##</div>
+                <div class="doubleProjectImage">
+                    <div class="doubleProjectImageWrapper">
+                        <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
+                        <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
+                    </div>
+                    <div class="imageCaption">Caption</div>
+                </div>
+                <div class="titleWithText">
+                    <h1 class="projectTitle">##PROJECT_NAME##</h1>
+                    <div class="projectPageText">##PROJECT_DESCRIPTION##</div>
+                </div>
+                <div class="tripleProjectImage">
+                    <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
+                    <div class="tripleProjectImagewrapper">
+                        <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
+                        <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
+                    </div>
+                    <div class="imageCaption">Caption</div>
+                </div>
+            </div>
+        </div>
+
+        <section class="footerSection">
+    </div>
+    <div class="content-container">
+        <div class="projectPageFooter">
+            <div class="footerContent">
+                <div class="footerlogo">
+                    <div class="logoWithName">
+                    </div>
+                </div>
+                <div class="titleWithText">
+                    <h1 class="projectTitle">##NEXT_PROJECT_NAME##</h1>
+                    <div class="projectPageFooterText projectPageText">##NEXT_PROJECT_DESCRIPTION##</div>
+                </div>
+                <button onclick="" class="footerButton projectnavigationButton">View project</button>
+            </div>
+            <div class="footerImage">
+                <div class="projectImage2"><img src="./img/project2.svg" alt="" srcset=""></div>
+            </div>
+            <div class="footerBottomlogo">
+                <div class="logoWithName">
+                </div>
+            </div>
+
+        </div>
+
+        </section>
+    </div>
 
 </body>
 
