@@ -92,7 +92,7 @@ button:focus-visible{
     font-size: 64px;
     margin-top: 24px;
     margin-bottom: 24px;
-    width: 417px;
+    width: 312px;
 
 }
 
@@ -312,6 +312,9 @@ button:focus-visible{
 
 
 @media (max-width: 472px) {
+    body{
+        overflow-x: hidden;
+    }
     img{
         height: 312px;
     }

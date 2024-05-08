@@ -875,7 +875,7 @@ textarea:focus-visible {
 /* Mobile L */
 @media (max-width: 616px) {
     body {
-        overflow-x: hidden;
+        overflow-x: auto;
     }
 
     .content-container {
@@ -1040,7 +1040,7 @@ textarea:focus-visible {
 /* Mobile S */
 @media (max-width: 472px) {
     body {
-        overflow-x: hidden;
+        overflow-x: auto;
     }
 
     .content-container {
