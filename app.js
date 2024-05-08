@@ -20,6 +20,7 @@ const emailTableElement = document.getElementById('emailTableElement')
 const placeholderElem = document.getElementById('emailPlaceholderElement')
 const errorMessage = document.getElementById('error-message')// Get the error message span
 const message = document.getElementById('formText')
+const messageBox = document.getElementById('messageElement')
 
 window.addEventListener('load', function () {/* Focus Managment Logic */
 
@@ -166,6 +167,15 @@ emailForm.addEventListener("submit", (e) => {
     placeholderElem.style.color = "#8D8D8D"
 
 
+})
+formText.addEventListener('focus', function(){
+    console.log("messagetext is focused")
+    messageBox.style.outlineColor = "#FF007A"
+    messageBox.style.outlineStyle = "dashed"
+    formText.addEventListener('blur', function () {
+        messageBox.style.outlineColor = "none"
+        messageBox.style.outlineStyle = "none"
+    })
 })
 
 burgerBtn.onclick = function () {/* Opening MODAL */

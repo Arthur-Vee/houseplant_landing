@@ -41,8 +41,8 @@
                                 </button>
 
                             </div>
-                            <button onclick="closeModal()" id="close" class="close modal_button"><img src="./img/modalCloseArrow.svg"
-                                    alt="">
+                            <button onclick="closeModal()" id="close" class="close modal_button"><img
+                                    src="./img/modalCloseArrow.svg" alt="">
                                 <p class=" hideButton">Hide</p>
                             </button>
 
@@ -243,16 +243,18 @@
 
 
                 <form id="emailForm" class="email_sending_form withHover" method="post">
-                            <div id="emailTableElement" class="formElement emailTableElement">
-                                <input class="" tabindex="12" id="formEmail" name="email">
-                                 <div id="emailPlaceholderElement" class="emailPlaceholderElement">Your email...</div>
-                                 <div id="error-message" for="email" class="error-message"></div>
-                            </div>
-                            <div class="formElement">
-                                <textarea tabindex="13" id="formText" placeholder="Your message..." name="userText" required="required"></textarea>
-                            </div>
-                   
-                    <button tabindex="14" id="formSubmitButton" class="contact_form-button formElement" type="submit" >Send</button>
+                    <div id="emailTableElement" class="formElement emailTableElement">
+                        <input class="" tabindex="12" id="formEmail" name="email">
+                        <div id="emailPlaceholderElement" class="emailPlaceholderElement">Your email...</div>
+                        <div id="error-message" for="email" class="error-message"></div>
+                    </div>
+                    <div id="messageElement" class="formElement messageElement">
+                        <textarea tabindex="13" id="formText" placeholder="Your message..." name="userText"
+                            required="required"></textarea>
+                    </div>
+
+                    <button tabindex="14" id="formSubmitButton" class="contact_form-button formElement"
+                        type="submit">Send</button>
                 </form>
             </div>
 
