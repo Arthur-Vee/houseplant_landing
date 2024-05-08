@@ -17,6 +17,19 @@
 
 <body>
     <div id="projectPage_container" class="projectPage_container">
+        <div id="mobileNavWithHamburgerMenu" class="mobileNavWithHamburgerMenu">
+            <div id="mobileNavWithHamburgerMenuWrapper" class="mobileNavWithHamburgerMenuWrapper">
+                <div onclick="scrollToSection('header')" class="logoWithNameMobile burgerElement navigationLogo">
+                    <img class="logo" src="/img/navLogo.svg" alt="">
+                </div>
+                <div class="burgerMenuDivider"></div>
+                <div onclick="openModal()" id="burger_menu" class="burger_menu burgerElement">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
         <div class="content-container">
             <div id="header" class="projectPageHeader">
                 <div onclick="location.href='index.html#header'" class="logo">
@@ -25,50 +38,75 @@
                 </div>
                 <div class="navigation">
                     <div class="navigation_buttons">
-                        <button class="navigation_button projectnavigationButton" onclick="location.href='index.html#work'">Work</button>
-                        <button class="navigation_button projectnavigationButton" onclick="location.href='index.html#whatWeDo'">What we
+                        <button class="navigation_button projectnavigationButton"
+                            onclick="location.href='index.html#work'">Work</button>
+                        <button class="navigation_button projectnavigationButton"
+                            onclick="location.href='index.html#whatWeDo'">What we
                             do</button>
-                        <button class="navigation_button projectnavigationButton" onclick="location.href='index.html#about'">About</button>
-                        <button class="projectnavigationButton" onclick="location.href='index.html#contact'">Contact</button>
+                        <button class="navigation_button projectnavigationButton"
+                            onclick="location.href='index.html#about'">About</button>
+                        <button class="projectnavigationButton"
+                            onclick="location.href='index.html#contact'">Contact</button>
                     </div>
                 </div>
             </div>
 
-            <div id="mobileNavWithHamburgerMenu" class="mobileNavWithHamburgerMenu">
-                <div id="mobileNavWithHamburgerMenuWrapper" class="mobileNavWithHamburgerMenuWrapper">
-                    <div onclick="scrollToSection('header')" class="logoWithNameMobile burgerElement navigationLogo">
-                        <img class="logo" src="/img/navLogo.svg" alt="">
-                    </div>
-                    <div class="burgerMenuDivider"></div>
-                    <div id="burger_menu" class="burger_menu burgerElement">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                </div>
-            </div>
             <div id="stickyNavPopUp" class="stickyNavPopUp">
                 <div id="stickyNavPopUpWrapper" class="stickyNavPopUpWrapper">
-                    <div onclick="scrollToSection('header')" class="stickyNavPopUpLogoWithName burgerElement navigationLogo">
+                    <div onclick="scrollToSection('header')"
+                        class="stickyNavPopUpLogoWithName burgerElement navigationLogo">
                         <img src="/img/navLogo.svg" alt="">
                     </div>
                     <div class="burgerMenuDivider"></div>
-                    <button class="projectnavigationButton" tabindex="8" onclick="scrollToSection('work')">
+                    <button class="projectnavigationButton" tabindex="8" onclick="location.href='index.html#work'">
                         <span>Work</span>
                     </button>
                     <div class="burgerMenuDivider"></div>
-                    <button class="projectnavigationButton" tabindex="9" onclick="scrollToSection('whatWeDo')">
+                    <button class="projectnavigationButton" tabindex="9" onclick="location.href='index.html#whatWeDo'">
                         <span>What we do</span>
                     </button>
                     <div class="burgerMenuDivider"></div>
-                    <button class="projectnavigationButton" tabindex="10" onclick="scrollToSection('about')">
+                    <button class="projectnavigationButton" tabindex="10" onclick="location.href='index.html#about'">
                         <span>About</span>
                     </button>
                     <div class="burgerMenuDivider"></div>
-                    <button class="projectnavigationButton" tabindex="11" onclick="scrollToSection('contact')">
+                    <button class="projectnavigationButton" tabindex="11" onclick="location.href='index.html#contact'">
                         <span>Contact</span>
                     </button>
                 </div>
+            </div>
+            <div aria-modal="true" role="dialog" id="modalMenu" class="modalMenu">
+                <div id="modalMenuContent" class="modalMenuContent">
+                    <div class="content-container">
+                        <div id="modalContentWrapper" class="modalContentWrapper">
+                            <div class="logoWithNameMobileModal">
+                                <img src="/img/logo.svg" alt="">
+                            </div>
+                            <div onclick="closeModal()"
+                                class="navigation_buttons modal_navigation_buttons inter-regular">
+                                <button onclick="location.href='index.html#work'">
+                                    <span>Work</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
+                                </button>
+                                <button onclick="location.href='index.html#whatWeDo'">
+                                    <span>What we do</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
+                                </button>
+                                <button onclick="location.href='index.html#about'">
+                                    <span>About</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
+                                </button>
+                                <button onclick="location.href='index.html#conta'">
+                                    <span>Contact</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
+                                </button>
+
+                            </div>
+                            <button onclick="closeModal()" id="close" class="close"><img src="./img/modalCloseArrow.svg"
+                                    alt="">
+                                <p class="hideButton">Hide</p>
+                            </button>
+
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div class="projectContentInnerWrapper">
@@ -76,15 +114,15 @@
                     <h1 class="projectTitle">##PROJECT_NAME##</h1>
                     <div class="projectPageText">##PROJECT_DESCRIPTION##</div>
                 </div>
-                <div class="singleProjectImage">
-                    <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
+                <div class="singleProjectImage" tabindex="1">
+                    <div class="projectImage1">##IMAGE_1##</div>
                     <div class="imageCaption">Caption</div>
                 </div>
                 <div class="projectPageText">##PROJECT_DESCRIPTION##</div>
-                <div class="doubleProjectImage">
+                <div class="doubleProjectImage" tabindex="2">
                     <div class="doubleProjectImageWrapper">
-                        <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
-                        <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
+                        <div class="projectImage1">##IMAGE_2##</div>
+                        <div class="projectImage1">##IMAGE_3##</div>
                     </div>
                     <div class="imageCaption">Caption</div>
                 </div>
@@ -92,43 +130,44 @@
                     <h1 class="projectTitle">##PROJECT_NAME##</h1>
                     <div class="projectPageText">##PROJECT_DESCRIPTION##</div>
                 </div>
-                <div class="tripleProjectImage">
-                    <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
+                <div class="tripleProjectImage" tabindex="3">
+                    <div class="projectImage1">##IMAGE_4##</div>
                     <div class="tripleProjectImagewrapper">
-                        <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
-                        <div class="projectImage1"><img src="./img/project1.svg" alt="" srcset=""></div>
+                        <div class="projectImage1">##IMAGE_5##</div>
+                        <div class="projectImage1">##IMAGE_6##</div>
                     </div>
                     <div class="imageCaption">Caption</div>
                 </div>
             </div>
         </div>
 
-        <section class="footerSection">
     </div>
-    <div class="content-container">
-        <div class="projectPageFooter">
-            <div class="footerContent">
-                <div class="footerlogo">
+    <section class="footerSection">
+        <div class="content-container">
+            <div class="projectPageFooter">
+                <div class="footerContent">
+                    <div class="footerlogo">
+                        <div class="logoWithName">
+                        </div>
+                    </div>
+                    <div class="titleWithText">
+                        <h1 class="projectTitle">##NEXT_PROJECT_NAME##</h1>
+                        <div class="projectPageFooterText projectPageText">##NEXT_PROJECT_DESCRIPTION##</div>
+                    </div>
+                    <button onclick="changeProject()" class="footerButton projectnavigationButton" tabindex="4">View
+                        project</button>
+                </div>
+                <div class="footerImage">
+                    <div class="projectImage2">##IMAGE_7##</div>
+                </div>
+                <div class="footerBottomlogo">
                     <div class="logoWithName">
                     </div>
                 </div>
-                <div class="titleWithText">
-                    <h1 class="projectTitle">##NEXT_PROJECT_NAME##</h1>
-                    <div class="projectPageFooterText projectPageText">##NEXT_PROJECT_DESCRIPTION##</div>
-                </div>
-                <button onclick="" class="footerButton projectnavigationButton">View project</button>
-            </div>
-            <div class="footerImage">
-                <div class="projectImage2"><img src="./img/project2.svg" alt="" srcset=""></div>
-            </div>
-            <div class="footerBottomlogo">
-                <div class="logoWithName">
-                </div>
+
             </div>
 
-        </div>
-
-        </section>
+    </section>
     </div>
 
 </body>

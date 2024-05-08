@@ -27,21 +27,21 @@
                             </div>
                             <div onclick="closeModal()"
                                 class="navigation_buttons modal_navigation_buttons inter-regular">
-                                <button id="modalWorkButton" onclick="scrollToSection('work')">
+                                <button class="modal_button" id="modalWorkButton" onclick="scrollToSection('work')">
                                     <span>Work</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
                                 </button>
-                                <button onclick="scrollToSection('whatWeDo')">
+                                <button class="modal_button" onclick="scrollToSection('whatWeDo')">
                                     <span>What we do</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
                                 </button>
-                                <button onclick="scrollToSection('about')">
+                                <button class="modal_button" onclick="scrollToSection('about')">
                                     <span>About</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
                                 </button>
-                                <button onclick="scrollToSection('contact')">
+                                <button class="modal_button" onclick="scrollToSection('contact')">
                                     <span>Contact</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
                                 </button>
 
                             </div>
-                            <button onclick="closeModal()" id="close" class="close"><img src="./img/modalCloseArrow.svg"
+                            <button onclick="closeModal()" id="close" class="close modal_button"><img src="./img/modalCloseArrow.svg"
                                     alt="">
                                 <p class=" hideButton">Hide</p>
                             </button>
@@ -229,14 +229,39 @@
                 <p class="paragraphTexts">Send all your questions via email, to learn more about what we do and ask more
                     specific questions about your project and pricing. You can use the form below or send an email to
                     houseplant@gmail.com</p>
-                <form id="emailForm" class="email_sending_form withHover" method="">
-                    <input tabindex="12" id="formEmail" required class="formEmelemnt" placeholder="Your email..." type="email"
-                        name="email" id="email">
-                    <input tabindex="13" id="formText" required class="formEmelemnt" placeholder="Your message..." type="textarea"
-                        name="userText" id="userText">
-                    <button tabindex="14" id="formSubmitButton" class="contact_form-button formEmelemnt">Send</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <form id="emailForm" class="email_sending_form withHover" method="post">
+                            <div id="emailTableElement" class="formElement emailTableElement">
+                                <input class="" tabindex="12" id="formEmail" name="email">
+                                 <div id="emailPlaceholderElement" class="emailPlaceholderElement">Your email...</div>
+                                 <div id="error-message" for="email" class="error-message"></div>
+
+                            </div>
+
+                          
+                        
+                            <div class="formElement">
+                                <textarea tabindex="13" id="formText" placeholder="Your message..." name="userText" id="userText"></textarea>
+                        
+
+                            </div>
+                   
+                    <button tabindex="14" id="formSubmitButton" class="contact_form-button formElement" type="submit" >Send</button>
                 </form>
             </div>
+
         </section>
     </div>
 </body>

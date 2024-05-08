@@ -7,6 +7,26 @@ img{
     height: 400px;
     object-fit: cover;
 }
+img:focus-visible{
+    outline-color: #FF007A;
+    outline-style: dashed;
+}
+div:focus-visible{
+    outline-color: none;
+    outline-style: none;
+}
+.logoWithNameMobileModal img{
+    width: auto;
+    height: auto;
+}
+.close img{
+    width: auto;
+    height: auto;
+}
+.modal_navigation_buttons img{
+    width: auto;
+    height: auto;
+}
 
 .navigationLogo img{
     width: auto;
@@ -28,7 +48,7 @@ img{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 52px;
+    padding-top: 52px;
 }
 
 .navigation {
@@ -38,12 +58,20 @@ img{
 .navigation button {
     background-color: rgba(247, 247, 247, 1);
     color: #2C2C2C;
-    outline: none;
+ 
 }
 
 .navigation_button::after {
     background-color: #F7F7F7;
-    outline: none;
+ 
+}
+Button:focus{
+    outline-color: #FF007A;
+    outline-style: dashed;
+}
+button:focus-visible{
+    outline-color: #FF007A;
+    outline-style: dashed;
 }
 
 .projectnavigationButton:hover{
@@ -233,7 +261,7 @@ img{
         display: none;
     }
     .mobileNavWithHamburgerMenu {
-        width: inherit;
+        width: 100%;
     }
 
     .projectContentInnerWrapper {

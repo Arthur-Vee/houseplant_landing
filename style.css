@@ -46,7 +46,7 @@ p {
     font-style: normal;
 }
 
-input:focus {
+input:focus-visible {
     outline-color: #FF007A;
     outline-style: dashed;
     border: none;
@@ -127,6 +127,7 @@ button:active {
     gap: 4px;
 
 }
+
 .navigation_buttons button {
     padding: 14px 24px 14px 24px;
 
@@ -185,6 +186,12 @@ button:active {
 }
 
 .stickyNavPopUpWrapper button:hover {
+    background-color: #EBCE68;
+}
+
+.stickyNavPopUpWrapper button:last-child:hover {
+    border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
     background-color: #EBCE68;
 }
 
@@ -340,27 +347,117 @@ button:active {
 
 input::placeholder {
     font-style: italic;
+    text-align: center;
+    color: #8D8D8D;
+}
+
+textarea::placeholder {
+    font-style: italic;
+    text-align: center;
+    position: relative;
+    /* Make placeholder text positionable */
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust positioning for centering */
+    color: #8D8D8D;
+}
+
+textarea::-moz-placeholder {
+    /* Target Firefox */
+    position: relative;
+    /* Make placeholder text positionable */
+    top: 50%;
+    /* Center vertically */
+    left: 50%;
+    /* Center horizontally */
+    transform: translate(-50%, -50%);
+    /* Adjust positioning for centering */
+
 }
 
 .email_sending_form {
     display: flex;
-    border: solid 1px black;
+    border-top: solid 1px black;
+    border-bottom: solid 1px black;
+    border-left: solid 1px black;
+    height: 244px;
 }
 
-.formEmelemnt {
+.formElement {
+    display: flex;
+    flex-direction: column;
     color: black;
     flex: 1;
-    text-align: center;
     background-color: transparent;
+    border-right: solid 1px black;
 
+}
+
+.emailTableElement {
+    outline-color: none;
+    outline-style: none;
+    padding-top: 24px;
+    padding-left: 24px;
+}
+
+.emailPlaceholderElement {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: text;
+    margin-bottom: 24px;
+    font-style: italic;
+    color: #8D8D8D;
 }
 
 .contact_form input {
+    display: flex;
+    align-items: flex-start;
     background-color: transparent;
+    width: 100%;
     border: none;
-    border-right: solid 1px black;
-    height: 244px;
 }
+
+.contact_form textarea {
+    display: flex;
+    padding: 24px;
+    background-color: transparent;
+    width: 100%;
+    border: none;
+    height: 244px;
+    overflow-wrap: break-word;
+    resize: none;
+
+
+}
+
+input:focus-visible {
+    outline-color: none;
+    outline-style: none;
+}
+
+textarea:focus-visible {
+    outline-color: #FF007A;
+    outline-style: dashed;
+}
+
+.error-message {
+    display: flex;
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+    height: 24px;
+    position: relative;
+    bottom: 8px;
+    justify-content: end;
+    visibility: hidden;
+    color: red;
+}
+
+
 
 .contact_form-button {
     max-width: 244px;
@@ -379,7 +476,7 @@ input::placeholder {
 .modalMenu {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     left: 0;
     top: 0;
     bottom: 0;
@@ -428,14 +525,14 @@ input::placeholder {
     gap: 12px;
     float: right;
     font-size: 28px;
-    font-weight: bold;
     background-color: transparent;
 }
 
 .close:hover,
 .close:focus {
     color: black;
-    background-color: #EBCE68;;
+    background-color: #EBCE68;
+    ;
     text-decoration: none;
     cursor: pointer;
 }
@@ -445,12 +542,13 @@ input::placeholder {
 }
 
 .email_sending_form button {
-    height: 244px;
+    height: 242px;
     justify-content: center;
 }
 
 .email_sending_form button:hover {
-    color: white;
+    color: black;
+    background-color: hsl(0, 0%, 95%);
 }
 
 @keyframes navigationSlider {
@@ -559,7 +657,7 @@ input::placeholder {
     }
 
     .project img {
-    
+
         width: 709px;
     }
 
@@ -579,7 +677,7 @@ input::placeholder {
 }
 
 
-/* Tables L */
+/* Tablet L */
 @media (max-width: 1000px) {
 
     .content-container {
@@ -604,7 +702,7 @@ input::placeholder {
 }
 
 
-/* Tables S */
+/* Tablet S */
 @media (max-width: 808px) {
     .content-container {
         width: 568px;
@@ -637,7 +735,8 @@ input::placeholder {
         padding-top: 40px;
         padding-bottom: 40px;
     }
-    .projects_showcase{
+
+    .projects_showcase {
         gap: 24px;
     }
 
@@ -700,19 +799,32 @@ input::placeholder {
     .email_sending_form {
         flex-direction: column;
         height: 488px;
-        border: solid 1px black;
+    }
+    .contact_form input{
+        margin-top: 24px;
+        margin-left: 24px;
     }
 
-    .email_sending_form input {
-        border-right: solid 0px black;
+    .formElement {
+        padding: 0;
+        justify-content: space-between;
         border-bottom: solid 1px black;
+    }
+
+    #emailPlaceholderElement {
+        height: auto;
+        margin-bottom: 24px;
     }
 
     .email_sending_form button {
         justify-content: center;
         padding: 0px;
+        border-bottom: none
     }
 
+    .contact_form textarea{
+        height: 100%;
+    }
     .contact_form-button {
         max-width: none
     }
@@ -732,7 +844,10 @@ input::placeholder {
     }
 
     .listing {
-        flex: 1 1 180px;
+        padding-left: 0px;
+        display: grid;
+        flex: 1 1 208px;
+        text-align: center;
     }
 
     .navigation_buttons {
@@ -742,7 +857,8 @@ input::placeholder {
     .navigation_button::after {
         display: none;
     }
-    .project{
+
+    .project {
         height: auto;
     }
 
@@ -854,6 +970,10 @@ input::placeholder {
     .stickyNavPopUp {
         display: none;
     }
+
+    .contact_form {
+        margin-bottom: 136px;
+    }
 }
 
 
@@ -880,7 +1000,8 @@ input::placeholder {
         padding-right: 14px;
         flex: 1 1 130px;
     }
-    .webDevelopment_offer{
+
+    .webDevelopment_offer {
         display: flex;
         flex-direction: column;
         text-align: center;
@@ -889,8 +1010,8 @@ input::placeholder {
         padding-left: 9px;
         padding-right: 9px;
     }
-        
-    .project{
+
+    .project {
         height: auto;
     }
 
@@ -987,5 +1108,9 @@ input::placeholder {
 
     .stickyNavPopUp {
         display: none;
+    }
+
+    .contact_form {
+        margin-bottom: 136px;
     }
 }
