@@ -350,8 +350,13 @@ input::placeholder {
     text-align: center;
     color: #8D8D8D;
 }
+textarea{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 
-textarea::placeholder {
+::placeholder {
     font-style: italic;
     text-align: center;
     position: relative;
@@ -363,19 +368,19 @@ textarea::placeholder {
     transform: translate(-50%, -50%);
     /* Adjust positioning for centering */
     color: #8D8D8D;
+
+   opacity: 1;
 }
 
-textarea::-moz-placeholder {
-    /* Target Firefox */
-    position: relative;
-    /* Make placeholder text positionable */
-    top: 50%;
-    /* Center vertically */
-    left: 50%;
-    /* Center horizontally */
-    transform: translate(-50%, -50%);
-    /* Adjust positioning for centering */
-
+::-moz-placeholder {
+    text-align: center; /* Center align the text */
+    color: #8D8D8D;
+    line-height:200px;
+}
+:-moz-placeholder {
+    text-align: center; /* Center align the text */
+    color: #8D8D8D;
+    line-height:200px;
 }
 
 .email_sending_form {
@@ -828,6 +833,18 @@ textarea:focus-visible {
     .contact_form-button {
         max-width: none
     }
+    ::-moz-placeholder {
+        text-align: center; /* Center align the text */
+        color: #8D8D8D;
+        line-height:6.667;
+        opacity:1
+    }
+    :-moz-placeholder {
+        text-align: center; /* Center align the text */
+        color: #8D8D8D;
+        line-height:6.667;
+        opacity:1;
+    }
 }
 
 
@@ -974,6 +991,18 @@ textarea:focus-visible {
     .contact_form {
         margin-bottom: 136px;
     }
+    ::-moz-placeholder {
+        text-align: center; /* Center align the text */
+        color: #8D8D8D;
+        line-height:6.667;
+        opacity:1
+    }
+    :-moz-placeholder {
+        text-align: center; /* Center align the text */
+        color: #8D8D8D;
+        line-height:6.667;
+        opacity:1;
+    }
 }
 
 
@@ -1112,5 +1141,17 @@ textarea:focus-visible {
 
     .contact_form {
         margin-bottom: 136px;
+    }
+    ::-moz-placeholder {
+        text-align: center; /* Center align the text */
+        color: #8D8D8D;
+        line-height:6.667;
+        opacity:1
+    }
+    :-moz-placeholder {
+        text-align: center; /* Center align the text */
+        color: #8D8D8D;
+        line-height:6.667;
+        opacity:1;
     }
 }
