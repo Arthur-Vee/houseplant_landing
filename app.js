@@ -236,7 +236,7 @@ function handleNavigationSlider() {
     const navSlider = document.getElementById('stickyNavPopUp');
     const mobileNavSlider = document.getElementById('mobileNavWithHamburgerMenu');
 
-    if (screenWidth > 617) {
+    if (screenWidth >= 617) {
         mobileNavSlider.style.display = "none"
         if (window.scrollY > headerElem.offsetTop + headerElem.offsetHeight) {
             navSlider.style.display = "flex";

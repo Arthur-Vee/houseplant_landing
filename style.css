@@ -350,7 +350,8 @@ input::placeholder {
     text-align: center;
     color: #8D8D8D;
 }
-textarea{
+
+textarea {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -369,18 +370,21 @@ textarea{
     /* Adjust positioning for centering */
     color: #8D8D8D;
 
-   opacity: 1;
+    opacity: 1;
 }
 
 ::-moz-placeholder {
-    text-align: center; /* Center align the text */
+    text-align: center;
+    /* Center align the text */
     color: #8D8D8D;
-    line-height:200px;
+    line-height: 200px;
 }
+
 :-moz-placeholder {
-    text-align: center; /* Center align the text */
+    text-align: center;
+    /* Center align the text */
     color: #8D8D8D;
-    line-height:200px;
+    line-height: 200px;
 }
 
 .email_sending_form {
@@ -805,7 +809,8 @@ textarea:focus-visible {
         flex-direction: column;
         height: 488px;
     }
-    .contact_form input{
+
+    .contact_form input {
         margin-top: 24px;
         margin-left: 24px;
     }
@@ -827,30 +832,37 @@ textarea:focus-visible {
         border-bottom: none
     }
 
-    .contact_form textarea{
+    .contact_form textarea {
         height: 100%;
     }
+
     .contact_form-button {
         max-width: none
     }
+
     ::-moz-placeholder {
-        text-align: center; /* Center align the text */
+        text-align: center;
+        /* Center align the text */
         color: #8D8D8D;
-        line-height:6.667;
-        opacity:1
+        line-height: 6.667;
+        opacity: 1
     }
+
     :-moz-placeholder {
-        text-align: center; /* Center align the text */
+        text-align: center;
+        /* Center align the text */
         color: #8D8D8D;
-        line-height:6.667;
-        opacity:1;
+        line-height: 6.667;
+        opacity: 1;
     }
 }
 
 
 /* Mobile L */
 @media (max-width: 616px) {
-
+    body{
+        overflow-x: hidden;
+    }
     .content-container {
         width: 424px;
     }
@@ -991,24 +1003,30 @@ textarea:focus-visible {
     .contact_form {
         margin-bottom: 136px;
     }
+
     ::-moz-placeholder {
-        text-align: center; /* Center align the text */
+        text-align: center;
+        /* Center align the text */
         color: #8D8D8D;
-        line-height:6.667;
-        opacity:1
+        line-height: 6.667;
+        opacity: 1
     }
+
     :-moz-placeholder {
-        text-align: center; /* Center align the text */
+        text-align: center;
+        /* Center align the text */
         color: #8D8D8D;
-        line-height:6.667;
-        opacity:1;
+        line-height: 6.667;
+        opacity: 1;
     }
 }
 
 
 /* Mobile S */
 @media (max-width: 472px) {
-
+    body{
+        overflow-x: hidden;
+    }
     .content-container {
         width: 312px;
     }
@@ -1142,16 +1160,20 @@ textarea:focus-visible {
     .contact_form {
         margin-bottom: 136px;
     }
+
     ::-moz-placeholder {
-        text-align: center; /* Center align the text */
+        text-align: center;
+        /* Center align the text */
         color: #8D8D8D;
-        line-height:6.667;
-        opacity:1
+        line-height: 6.667;
+        opacity: 1
     }
+
     :-moz-placeholder {
-        text-align: center; /* Center align the text */
+        text-align: center;
+        /* Center align the text */
         color: #8D8D8D;
-        line-height:6.667;
-        opacity:1;
+        line-height: 6.667;
+        opacity: 1;
     }
 }
