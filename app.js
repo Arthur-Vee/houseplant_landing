@@ -168,7 +168,7 @@ emailForm.addEventListener("submit", (e) => {
 
 
 })
-formText.addEventListener('focus', function(){
+formText.addEventListener('focus', function () {
     console.log("messagetext is focused")
     messageBox.style.outlineColor = "#FF007A"
     messageBox.style.outlineStyle = "dashed"

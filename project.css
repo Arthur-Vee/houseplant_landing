@@ -66,8 +66,8 @@ div:focus-visible{
  
 }
 Button:focus{
-    outline-color: #FF007A;
-    outline-style: dashed;
+    outline-color: transparent;
+    outline-style: none;
 }
 button:focus-visible{
     outline-color: #FF007A;

@@ -3,6 +3,10 @@
     margin: 0;
 }
 
+a:active {
+    outline-color: transparent;
+    outline-style: none
+}
 
 body {
     overflow: auto;
@@ -247,6 +251,16 @@ button:active {
 
 .project:hover {
     opacity: 0.9;
+}
+
+.projectWrapperButton:active {
+    outline-color: transparent;
+    outline-style: none
+}
+
+.projectWrapperButton:focus {
+    outline-color: transparent;
+    outline-style: none
 }
 
 .project img {
@@ -860,9 +874,10 @@ textarea:focus-visible {
 
 /* Mobile L */
 @media (max-width: 616px) {
-    body{
+    body {
         overflow-x: hidden;
     }
+
     .content-container {
         width: 424px;
     }
@@ -1024,9 +1039,10 @@ textarea:focus-visible {
 
 /* Mobile S */
 @media (max-width: 472px) {
-    body{
+    body {
         overflow-x: hidden;
     }
+
     .content-container {
         width: 312px;
     }
