@@ -241,6 +241,9 @@ button:focus-visible{
     .projectPageFooterText {
         width: auto;
     }
+    .projectPageText {
+        width: auto;
+    }
 
     .footerContent {
         width: 100%;
@@ -289,6 +292,10 @@ button:focus-visible{
 
     .footerImage {
         width: 100%;
+    }
+
+    .projectPageFooterText {
+        width: auto;
     }
 
     .projectTitle {

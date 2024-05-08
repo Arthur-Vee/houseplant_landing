@@ -161,6 +161,7 @@ button:active {
     position: fixed;
     top: 8px;
     left: 8px;
+    right: 8px;
     animation: navigationSliderTopToBottom 0.5s ease-in;
     animation-direction: normal;
     z-index: 1;
