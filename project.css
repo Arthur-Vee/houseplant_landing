@@ -138,7 +138,7 @@ button:focus-visible{
 }
 
 .footerSection {
-    width: 100%;
+    width: 100vw;
     background-color: #E1E1E1;
 }
 
@@ -256,6 +256,10 @@ button:focus-visible{
 }
 
 @media (max-width: 616px) {
+    body{
+        overflow:auto;
+        overflow-x: hidden;
+    }
     .content-container {
         width: 424px;
     }
@@ -320,6 +324,7 @@ button:focus-visible{
 
 @media (max-width: 472px) {
     body{
+        overflow:auto;
         overflow-x: hidden;
     }
     img{
