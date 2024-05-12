@@ -30,7 +30,6 @@ window.addEventListener('load', function () {/* Focus Managment Logic */
     function manageFocusAfterDelay() {/* Overrides native browser Focus Logic */
         document.addEventListener('keydown', (event) => {
 
-
             if (!isModalOpen) {
                 sortedTabbableArray = [...tabbableElements].sort((a, b) => parseInt(a.getAttribute('tabIndex'), 10) - parseInt(b.getAttribute('tabIndex'), 10));
             } else {
@@ -43,7 +42,7 @@ window.addEventListener('load', function () {/* Focus Managment Logic */
                 setTimeout(() => {
                     sortedTabbableArray[focusIndex].focus();
                     focusIndex++
-                }, 50);
+                }, 2);
             }
             if ((event.key === 'Enter' || event.key === ' ') && document.activeElement.hasAttribute('tabindex')) {
                 const focusedElement = document.activeElement;
