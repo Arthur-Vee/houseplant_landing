@@ -518,7 +518,7 @@ textarea:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 116px;
-    height: 100lvh;
+    height: 100%;
     margin-bottom: 72px;
 }
 
