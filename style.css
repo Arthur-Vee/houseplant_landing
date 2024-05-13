@@ -523,7 +523,7 @@ textarea:focus-visible {
 
 .modalMenuContent {
     background-color: #FFE27C;
-    height: 100dvh
+    height: calc(100lvh - 72px);
 }
 
 .modal_navigation_buttons {
