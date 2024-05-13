@@ -652,12 +652,12 @@ textarea:focus-visible {
 
 
     0% {
-        bottom: -60px;
+        bottom: 0px;
         display: block;
     }
 
     100% {
-        top: 100vh;
+        top: 110vh;
         display: none;
     }
 }
