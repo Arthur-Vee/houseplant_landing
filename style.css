@@ -1,3 +1,6 @@
+html{
+    height: 100dvh;
+}
 * {
     padding: 0;
     margin: 0;
@@ -657,7 +660,7 @@ textarea:focus-visible {
     }
 
     100% {
-        top: 110vh;
+        top: 150vh;
         display: none;
     }
 }
