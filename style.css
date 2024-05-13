@@ -517,12 +517,15 @@ textarea:focus-visible {
 .modalContentWrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     height: calc(100svh - 72px);
 }
 
 .modalMenuContent {
     background-color: #FFE27C;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     
 }
 
