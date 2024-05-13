@@ -2,7 +2,6 @@ var isModalOpen = false
 
 const burgerBtn = document.getElementById('burger_menu')
 const modal = document.getElementById("modalMenu");
-const allModalElements = modal.querySelectorAll('*'); // Get all elements
 const tabbableElements = document.querySelectorAll('[tabindex]')
 const modalTabbableElements = modal.querySelectorAll('button')
 let focusIndex = 0; //For tabbable elements
@@ -22,39 +21,38 @@ const errorMessage = document.getElementById('error-message')// Get the error me
 const message = document.getElementById('formText')
 const messageBox = document.getElementById('messageElement')
 
+var sortedTabbableArray = [...tabbableElements].sort((a, b) => parseInt(a.getAttribute('tabIndex'), 10) - parseInt(b.getAttribute('tabIndex'), 10));
+function manageFocusAfterDelay() {/* Overrides native browser Focus Logic */
+    document.addEventListener('keydown', (event) => {
+
+        if (!isModalOpen) {
+            sortedTabbableArray = [...tabbableElements].sort((a, b) => parseInt(a.getAttribute('tabIndex'), 10) - parseInt(b.getAttribute('tabIndex'), 10));
+        } else {
+            sortedTabbableArray = [...modalTabbableElements]
+        }
+        if (event.key === 'Tab') {
+            event.preventDefault()
+            setTimeout(() => {
+                console.log(sortedTabbableArray[focusIndex])
+                sortedTabbableArray[focusIndex].focus();
+                focusIndex++
+            }, 4);
+        }
+        if ((event.key === 'Enter' || event.key === ' ') && document.activeElement.hasAttribute('tabindex')) {
+            const focusedElement = document.activeElement;
+            // Simulate click event for users who navigate with tab button
+            focusedElement.click();
+
+            if (event.key === 'Enter') {
+                event.preventDefault();
+            }
+        }
+        if (focusIndex === sortedTabbableArray.length) {
+            focusIndex = 0
+        }
+    });
+}
 window.addEventListener('load', function () {/* Focus Managment Logic */
-
-    var sortedTabbableArray = [...tabbableElements].sort((a, b) => parseInt(a.getAttribute('tabIndex'), 10) - parseInt(b.getAttribute('tabIndex'), 10));
-
-
-    function manageFocusAfterDelay() {/* Overrides native browser Focus Logic */
-        document.addEventListener('keydown', (event) => {
-
-            if (!isModalOpen) {
-                sortedTabbableArray = [...tabbableElements].sort((a, b) => parseInt(a.getAttribute('tabIndex'), 10) - parseInt(b.getAttribute('tabIndex'), 10));
-            } else {
-                sortedTabbableArray = [...modalTabbableElements]
-            }
-            if (focusIndex === sortedTabbableArray.length) {
-                focusIndex = 0
-            }
-            if (event.key === 'Tab') {
-                setTimeout(() => {
-                    sortedTabbableArray[focusIndex].focus();
-                    focusIndex++
-                }, 2);
-            }
-            if ((event.key === 'Enter' || event.key === ' ') && document.activeElement.hasAttribute('tabindex')) {
-                const focusedElement = document.activeElement;
-                // Simulate click event for users who navigate with tab button
-                focusedElement.click();
-
-                if (event.key === 'Enter') {
-                    event.preventDefault();
-                }
-            }
-        });
-    }
 
     // Initiate focus management
     manageFocusAfterDelay();
@@ -69,8 +67,11 @@ email.addEventListener('focus', function () {
 
     email.addEventListener('input', function () {
         var emailValue = this.value;
-        if (emailValue > 0) {
-            placeholderElem.style.color = "transperent"
+
+        if (emailValue.length > 0) {
+            placeholderElem.style.color = "white"
+        } else {
+            placeholderElem.style.color = "#8D8D8D"
         }
 
     });
@@ -101,7 +102,7 @@ emailForm.addEventListener("submit", (e) => {
         return
     }
     if (!/@/.test(email.value)) {
-        errorMessage.innerHTML = "Email should contain an '@' character"
+        errorMessage.innerHTML = "Email should contain '@' character"
         errorMessage.style.visibility = "visible"
         return
     }
@@ -155,7 +156,6 @@ emailForm.addEventListener("submit", (e) => {
             }
         }
     };
-    scrollToSection("header")
     // Send the request with the FormData
     xhr.send(formData);
 
@@ -168,7 +168,6 @@ emailForm.addEventListener("submit", (e) => {
 
 })
 formText.addEventListener('focus', function () {
-    console.log("messagetext is focused")
     messageBox.style.outlineColor = "#FF007A"
     messageBox.style.outlineStyle = "dashed"
     formText.addEventListener('blur', function () {
@@ -177,10 +176,23 @@ formText.addEventListener('focus', function () {
     })
 })
 
-burgerBtn.onclick = function () {/* Opening MODAL */
+burgerBtn.onclick = function (event) {/* Opening MODAL */
+var captureSafariNativeFocus = true
+modal.addEventListener("focusin", (event) => {
+    if(captureSafariNativeFocus){
+        const focusedElement = event.target;
+        focusedElement.blur()
+        captureSafariNativeFocus = false
+        return
+    }
+    // Do something with the focused element
+});
+defaultWindow = document.activeElement
+console.log(defaultWindow)
     isModalOpen = true
     sortedTabbableArray = [...modalTabbableElements]
     focusIndex = 0
+    sortedTabbableArray[0].blur()
     modal.style.display = "block"
     modal.style.animation = "modalSliderTopToBottom 0.3s ease-in-out"
     modal.style.animationFillMode = "forwards"

@@ -8,6 +8,7 @@ a:active {
     outline-style: none
 }
 
+
 body {
     overflow: auto;
     font-family: "Inter", sans-serif;
@@ -27,7 +28,6 @@ a {
 a:focus {
     outline-color: #FF007A;
     outline-style: dashed;
-    border: none;
 }
 
 p {
@@ -81,6 +81,7 @@ button:hover {
 button:focus-visible {
     outline-color: #FF007A;
     outline-style: dashed;
+    outline-width: 2px;
 }
 
 button:active {
@@ -124,6 +125,7 @@ button:active {
 .navigation p {
     font-family: Arial, sans-serif;
     font-size: 16px;
+    line-height: 140%;
 }
 
 .navigation_buttons {
@@ -240,6 +242,10 @@ button:active {
     z-index: 0;
     background-color: transparent;
 }
+.projectWrapperButton:focus {
+    outline-color: transparent;
+    outline-style: none
+}
 
 .projectWrapperButton:hover {
     background-color: transparent;
@@ -255,11 +261,6 @@ button:active {
 }
 
 .projectWrapperButton:active {
-    outline-color: transparent;
-    outline-style: none
-}
-
-.projectWrapperButton:focus {
     outline-color: transparent;
     outline-style: none
 }
@@ -465,18 +466,21 @@ input:focus-visible {
 }
 
 textarea:focus-visible {
-    outline-color: #FF007A;
-    outline-style: dashed;
+    outline-color: none;
+    outline-style: none;
 }
 
 .error-message {
     display: flex;
     font-family: "Inter", sans-serif;
     font-weight: 700;
+    font-size:14px;
     height: 24px;
     position: relative;
     bottom: 8px;
+    right: 8px;
     justify-content: end;
+    align-items: end;
     visibility: hidden;
     color: red;
 }
@@ -511,10 +515,10 @@ textarea:focus-visible {
 }
 
 .modalContentWrapper {
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: calc(100% - 72px);
 }
 
 .modalMenuContent {
@@ -538,11 +542,13 @@ textarea:focus-visible {
 }
 
 .close {
+    padding: 0;
     color: black;
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 72px;
+    position: absolute;
     bottom: 0px;
     align-items: center;
     justify-content: center;
@@ -748,7 +754,7 @@ textarea:focus-visible {
     }
 
     .navigation_buttons {
-        margin-top: 24px;
+        
     }
 
     .navigation_button::after {

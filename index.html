@@ -8,7 +8,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@100..900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
     <script defer src="app.js"></script>
@@ -25,6 +26,7 @@
                             <div class="logoWithNameMobileModal">
                                 <img src="./img/logo.svg" alt="">
                             </div>
+
                             <div onclick="closeModal()"
                                 class="navigation_buttons modal_navigation_buttons inter-regular">
                                 <button class="modal_button" id="modalWorkButton" onclick="scrollToSection('work')">
@@ -39,15 +41,15 @@
                                 <button class="modal_button" onclick="scrollToSection('contact')">
                                     <span>Contact</span><img src="./img/arrowLeft_ModalNav.svg" alt="">
                                 </button>
-
                             </div>
-                            <button onclick="closeModal()" id="close" class="close modal_button"><img
-                                    src="./img/modalCloseArrow.svg" alt="">
-                                <p class=" hideButton">Hide</p>
-                            </button>
+
 
                         </div>
                     </div>
+                    <button onclick="closeModal()" id="close" class="close modal_button"><img
+                            src="./img/modalCloseArrow.svg" alt="">
+                        <p class=" hideButton">Hide</p>
+                    </button>
                 </div>
 
             </div>
@@ -228,20 +230,8 @@
                 <div class="title">LETS CHAT!</div>
                 <p class="paragraphTexts">Send all your questions via email, to learn more about what we do and ask more
                     specific questions about your project and pricing. You can use the form below or send an email to
-                    houseplant@gmail.com</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
+                    houseplant@gmail.com
+                </p>
                 <form id="emailForm" class="email_sending_form withHover" method="post">
                     <div id="emailTableElement" class="formElement emailTableElement">
                         <input class="" tabindex="12" id="formEmail" name="email">
