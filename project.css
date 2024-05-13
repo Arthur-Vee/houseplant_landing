@@ -2,36 +2,46 @@ body {
     font-family: "Inter", sans-serif;
 }
 
-img{
+img {
     width: 100%;
     height: 400px;
     object-fit: cover;
 }
-img:focus-visible{
+
+img:focus-visible {
     outline-color: #FF007A;
     outline-style: dashed;
 }
-div:focus-visible{
-    outline-color: none;
-    outline-style: none;
+
+div:focus-visible {
+    outline-color: #FF007A;
+    outline-style: dashed;
 }
-.logoWithNameMobileModal img{
-    width: auto;
-    height: auto;
-}
-.close img{
-    width: auto;
-    height: auto;
-}
-.modal_navigation_buttons img{
+
+.logoWithNameMobileModal img {
     width: auto;
     height: auto;
 }
 
-.navigationLogo img{
+#headerLogoWithName:focus-visible {
+    outline-color: #FF007A;
+    outline-style: dashed;
+}
+
+.close img {
     width: auto;
     height: auto;
-    object-fit: none;
+}
+
+.modal_navigation_buttons img {
+    width: auto;
+    height: auto;
+}
+
+.navigationLogo img {
+    width: auto;
+    height: auto;
+    object-fit: cover;
 }
 
 .imageCaption {
@@ -58,23 +68,25 @@ div:focus-visible{
 .navigation button {
     background-color: rgba(247, 247, 247, 1);
     color: #2C2C2C;
- 
+
 }
 
 .navigation_button::after {
     background-color: #F7F7F7;
- 
+
 }
-Button:focus{
+
+Button:focus {
     outline-color: transparent;
     outline-style: none;
 }
-button:focus-visible{
+
+button:focus-visible {
     outline-color: #FF007A;
     outline-style: dashed;
 }
 
-.projectnavigationButton:hover{
+.projectnavigationButton:hover {
     background-color: hsl(0, 0%, 84%);
     cursor: pointer;
 }
@@ -241,6 +253,7 @@ button:focus-visible{
     .projectPageFooterText {
         width: auto;
     }
+
     .projectPageText {
         width: auto;
     }
@@ -256,10 +269,11 @@ button:focus-visible{
 }
 
 @media (max-width: 616px) {
-    body{
-        overflow:auto;
+    body {
+        overflow: auto;
         overflow-x: hidden;
     }
+
     .content-container {
         width: 424px;
     }
@@ -267,6 +281,7 @@ button:focus-visible{
     .navigation {
         display: none;
     }
+
     .mobileNavWithHamburgerMenu {
         width: 100%;
     }
@@ -323,13 +338,15 @@ button:focus-visible{
 
 
 @media (max-width: 472px) {
-    body{
-        overflow:auto;
+    body {
+        overflow: auto;
         overflow-x: hidden;
     }
-    img{
+
+    img {
         height: 312px;
     }
+
     .image {
         height: 312px;
     }
@@ -345,6 +362,7 @@ button:focus-visible{
     .projectContentInnerWrapper {
         margin-top: 48px;
         gap: 48px;
+        margin-bottom: 72px;
     }
 
     .projectPageFooter {

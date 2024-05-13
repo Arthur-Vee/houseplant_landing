@@ -32,20 +32,20 @@
         </div>
         <div class="content-container">
             <div id="header" class="projectPageHeader">
-                <div onclick="location.href='index.html#header'" class="logo">
+                <div id="headerLogoWithName" tabindex="1" onclick="location.href='index.html#header'" class="logo">
                     <div class="logoWithName">
                     </div>
                 </div>
                 <div class="navigation">
                     <div class="navigation_buttons">
-                        <button class="navigation_button projectnavigationButton"
+                        <button tabindex="2" class="navigation_button projectnavigationButton"
                             onclick="location.href='index.html#work'">Work</button>
-                        <button class="navigation_button projectnavigationButton"
+                        <button tabindex="3" class="navigation_button projectnavigationButton"
                             onclick="location.href='index.html#whatWeDo'">What we
                             do</button>
-                        <button class="navigation_button projectnavigationButton"
+                        <button tabindex="4" class="navigation_button projectnavigationButton"
                             onclick="location.href='index.html#about'">About</button>
-                        <button class="projectnavigationButton"
+                        <button tabindex="5" class="projectnavigationButton"
                             onclick="location.href='index.html#contact'">Contact</button>
                     </div>
                 </div>
@@ -58,19 +58,19 @@
                         <img src="./img/navLogo.svg" alt="">
                     </div>
                     <div class="burgerMenuDivider"></div>
-                    <button class="projectnavigationButton" tabindex="8" onclick="location.href='index.html#work'">
+                    <button class="projectnavigationButton" tabindex="10" onclick="location.href='index.html#work'">
                         <span>Work</span>
                     </button>
                     <div class="burgerMenuDivider"></div>
-                    <button class="projectnavigationButton" tabindex="9" onclick="location.href='index.html#whatWeDo'">
+                    <button class="projectnavigationButton" tabindex="11" onclick="location.href='index.html#whatWeDo'">
                         <span>What we do</span>
                     </button>
                     <div class="burgerMenuDivider"></div>
-                    <button class="projectnavigationButton" tabindex="10" onclick="location.href='index.html#about'">
+                    <button class="projectnavigationButton" tabindex="12" onclick="location.href='index.html#about'">
                         <span>About</span>
                     </button>
                     <div class="burgerMenuDivider"></div>
-                    <button class="projectnavigationButton" tabindex="11" onclick="location.href='index.html#contact'">
+                    <button class="projectnavigationButton" tabindex="13" onclick="location.href='index.html#contact'">
                         <span>Contact</span>
                     </button>
                 </div>
@@ -114,12 +114,12 @@
                     <h1 class="projectTitle">##PROJECT_NAME##</h1>
                     <div class="projectPageText">##PROJECT_DESCRIPTION##</div>
                 </div>
-                <div class="singleProjectImage" tabindex="1">
+                <div class="singleProjectImage" tabindex="6">
                     <div class="projectImage1">##IMAGE_1##</div>
                     <div class="imageCaption">Caption</div>
                 </div>
                 <div class="projectPageText">##PROJECT_DESCRIPTION##</div>
-                <div class="doubleProjectImage" tabindex="2">
+                <div class="doubleProjectImage" tabindex="7">
                     <div class="doubleProjectImageWrapper">
                         <div class="projectImage1">##IMAGE_2##</div>
                         <div class="projectImage1">##IMAGE_3##</div>
@@ -130,7 +130,7 @@
                     <h1 class="projectTitle">##PROJECT_NAME##</h1>
                     <div class="projectPageText">##PROJECT_DESCRIPTION##</div>
                 </div>
-                <div class="tripleProjectImage" tabindex="3">
+                <div class="tripleProjectImage" tabindex="8">
                     <div class="projectImage1">##IMAGE_4##</div>
                     <div class="tripleProjectImagewrapper">
                         <div class="projectImage1">##IMAGE_5##</div>
@@ -153,7 +153,7 @@
                             <h1 class="projectTitle">##NEXT_PROJECT_NAME##</h1>
                             <div class="projectPageFooterText projectPageText">##NEXT_PROJECT_DESCRIPTION##</div>
                         </div>
-                        <button onclick="changeProject()" class="footerButton projectnavigationButton" tabindex="4">View
+                        <button onclick="changeProject()" class="footerButton projectnavigationButton" tabindex="9">View
                             project</button>
                     </div>
                     <div class="footerImage">

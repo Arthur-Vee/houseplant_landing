@@ -509,7 +509,7 @@ textarea:focus-visible {
     top: 0;
     bottom: 0;
     width: 100%;
-    height: 100%;
+    height: 100dvh;
     background-color: #FFE27C;
     animation: modalSliderTopToBottom 0.3s ease-in;
 }
@@ -518,7 +518,7 @@ textarea:focus-visible {
     display: flex;
     flex-direction: column;
     gap: 116px;
-    height: 100%;
+    height: 100dvh;
     margin-bottom: 72px;
 }
 
@@ -527,7 +527,7 @@ textarea:focus-visible {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+  
     
 }
 
@@ -553,7 +553,7 @@ textarea:focus-visible {
     flex-direction: row;
     width: 100%;
     line-height: 72px;
-    position: sticky;
+    position: absolute;
     bottom: 0px;
     left:  0px;
     align-items: center;
