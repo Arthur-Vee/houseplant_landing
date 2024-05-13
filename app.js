@@ -187,8 +187,6 @@ modal.addEventListener("focusin", (event) => {
     }
     // Do something with the focused element
 });
-defaultWindow = document.activeElement
-console.log(defaultWindow)
     isModalOpen = true
     sortedTabbableArray = [...modalTabbableElements]
     focusIndex = 0
@@ -232,7 +230,7 @@ function scrollToSection(targetSectionId) {
             if (!start) start = timestamp;
             const progress = timestamp - start;
             const easedProgress = easeInOutQuad(progress / animationDuration);
-            const scrollTop = current + (targetPosition - current) * easedProgress;
+            const scrollTop = current + (targetPosition - current) * easedProgress -60;
 
 
             window.scrollTo(0, scrollTop);

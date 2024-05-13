@@ -195,27 +195,6 @@ window.addEventListener('load', function () {/* Focus Managment Logic */
 });
 
 
-// modal.addEventListener('keydown', (event) => { // Get current focused element index
-
-
-//     if (event.key === 'Tab') {
-//         if (event.shiftKey) {
-//             focusedIndex--; // Decrement index on Shift + Tab
-//             if (focusedIndex < 0) {
-//                 focusedIndex = focusableModalElements.length - 1;
-//             }
-//         } else {
-//             focusedIndex++; // Increment index on Tab
-//             if (focusedIndex >= focusableModalElements.length) {
-//                 focusedIndex = 0;
-//             }
-//         }
-//         focusableModalElements[focusedIndex].focus();
-//         event.preventDefault();
-//     }
-// });
-
-
 
 function getModal() {
     return document.getElementById("modalMenu");
@@ -270,7 +249,7 @@ function scrollToSection(targetSectionId) {
             if (!start) start = timestamp;
             const progress = timestamp - start;
             const easedProgress = easeInOutQuad(progress / animationDuration);
-            const scrollTop = current + (targetPosition - current) * easedProgress;
+            const scrollTop = current + (targetPosition - current) * easedProgress-60;
 
 
             window.scrollTo(0, scrollTop);
