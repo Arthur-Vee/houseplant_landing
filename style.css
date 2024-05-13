@@ -518,7 +518,7 @@ textarea:focus-visible {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100lvh - 72px);
+    height: calc(100svh - 72px);
 }
 
 .modalMenuContent {
