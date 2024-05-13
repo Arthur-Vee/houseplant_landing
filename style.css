@@ -517,7 +517,7 @@ textarea:focus-visible {
 .modalContentWrapper {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+   gap: 116px;
     height: calc(100svh - 72px);
 }
 
