@@ -761,6 +761,9 @@ textarea:focus-visible {
         align-items: flex-start;
         width: 100%;
     }
+    .navigation p{
+        margin-bottom: 24px;
+    }
 
     .navigation_buttons {
         
@@ -912,6 +915,9 @@ textarea:focus-visible {
 
     .navigation_buttons {
         flex-wrap: wrap;
+    }
+    .navigation p{
+        margin-bottom: 24px;
     }
 
     .navigation_button::after {
@@ -1066,6 +1072,9 @@ textarea:focus-visible {
     .title {
         font-size: 62px;
         margin-top: 72px;
+    }
+    .navigation p{
+        margin-bottom: 24px;
     }
 
     .listing {
